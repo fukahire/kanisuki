@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html'],
+  content: ["./index.html",],
   theme: {
     extend: {
       fontFamily: {
         sans: "'Noto Sans TC', sans-serif",
+        huninn:"'HunInn'",
       },
       colors: {
         'mainred': '#FF4177',

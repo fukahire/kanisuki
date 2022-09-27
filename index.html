@@ -1,20 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Poppins:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./dist/output.css" rel="stylesheet">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+    <link href="//db.onlinewebfonts.com/c/d41ac2c403d35751ee2c3721d82a1e3c?family=jf-openhuninn-1.1" rel="stylesheet"
+        type="text/css" />
     <title>落難杯3</title>
 </head>
-<body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+
+<body class=" bg-[#131313]">
+    <!-- 全體 -->
+    <div id="app" class="h-screen w-screen
+    flex justify-center gap
+    font-sans
+    ">
+        <!-- container -->
+        <div class="w-[1200px] px-4">
+            <!-- banner -->
+            <div class="w-full bg-white h-[250px] rounded-md">
+                <div>banner(配色暫時隨便配)目前1200*250px 幹哩娘為啥吃不到</div>
+            </div>
+            <!-- content -->
+            <div class="w-full bg-dark p-8 
+            ">
+                <!-- 比賽章程 -->
+                <div id="theme">比賽章程</div>
+                <br><br><br><br><br><br><br><br><br><br>
+                <!-- 賽制 -->
+                <div id="contest">賽制</div>
+                <br><br><br><br><br><br><br><br><br><br>
+                <!-- 大會獎品 -->
+                <!-- title -->
+                <div id="award" class="h-8 p-4 bg-white flex justify-center align-center items-center text-lg font-medium mb-8">
+                    這裡是獎品區title
+                </div>
+                <div class="w-full flex flex-row flex-wrap items-stretch gap-[2%]">
+                    <div v-for="item in list" class="lg:w-[48%] flex flex-col
+                rounded-b-xl rounded-t-[30px] w-full">
+                        <!-- title -->
+                        <div class="w-full h-16 rounded-t-3xl
+                    flex flex-row justify-between items-center overflow-hidden
+                    bg-[#FD85FF] px-2
+                    ">
+                            <div class="flex flex-row h-full items-center gap-3">
+                                <div class="w-[4.5rem] h-[70%] rounded-full p-4 ml-2 bg-[#131313]
+                        text-white text-center flex justify-center items-center">{{item.unit}}</div>
+                                <div class="flex flex-col">
+                                    <div class="text-sm">{{item.luckysquid}}</div>
+                                    <div class="text-md font-bold">{{item.title}}</div>
+                                </div>
+                            </div>
+                            <!-- <div class="px-6 bg-black h-full flex justify-center items-center">
+                            <div class="w-8 h-8">
+                                這裡放icon
+                                <img class="w-full h-full" 
+                                src="./asset/ika.png" alt="">
+                            </div>
+                        </div> -->
+                        </div>
+                        <!-- 獎品內容 -->
+                        <div class="flex flex-col items-center rounded-b-3xl bg-[#1D1D1D] px-6 py-2 shadow-2xl">
+                            <!-- 贊助商 -->
+                            <div class="text-center px-4 py-1 mt-2 text-[#FD85FF] border-[#FD85FF]">{{item.sponsor}}贊助
+                            </div>
+                            <div class="flex flex-row items-center w-full gap-2 py-4 border-t-[0.5px] border-[#FD85FF]">
+                                <!-- 圖片 -->
+                                <div class="w-[40%] overflow-hidden rounded-2xl">
+                                    <img :src='item.image' alt="">
+                                </div>
+                                <!-- 內容 -->
+                                <div class="w-[60%] flex flex-col px-2 text-white">
+                                    <div class="">{{item.rule}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 工作人員 -->
+                <div id="staff">工作人員</div>
+                <br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+    <!-- nav -->
+    <div class="fixed flex justify-center items-center
+    bottom-0 w-full h-16 bg-slate-500">
+        <ul class="flex justify-between items-center w-[60%] gap-6">
+            <li class="flex justify-between items-center w-[60%]">
+                <ul class="flex flex-center items-center justify-between w-full">
+                    <li class="text-white text-lg"><a href="#theme">比賽章程</a></li>
+                    <li class="text-white text-lg"><a href="#contest">賽制</a></li>
+                    <li class="text-white text-lg"><a href="#award">大會獎品</a></li>
+                    <li class="text-white text-lg"><a href="#staff">工作人員</a></li>
+                </ul>
+            </li>
+            <li>
+            <li><a href=""
+                    class="block font-sans rounded-3xl w-40 h-12 text-lg bg-slate-500 font-medium text-white shadow-lg text-center leading-[48px] md:hover:bg-zinc-700 md:hover:text-maingreen">我要報名</a>
+            </li>
+            <li><a href=""
+                    class="block font-sans rounded-3xl w-40 h-12 text-lg bg-slate-500 font-medium text-white shadow-lg text-center leading-[48px] md:hover:bg-zinc-700 md:hover:text-maingreen">我想贊助</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+    <!--載入 Vue 的 CDN -->
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                list: [
+                    {
+                        unit: '1隊',
+                        title: '喵頭目超QQQQQ',
+                        image: './asset/haganemewmew.jpg',
+                        sponsor: '超可愛喵頭目鋼鐵',
+                        rule: '全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛。',
+                        luckysquid: '',
+                    },
+                    {
+                        unit: '1隊',
+                        title: '喵頭目超QQQQQ',
+                        image: './asset/haganemewmew.jpg',
+                        sponsor: '超可愛喵頭目鋼鐵',
+                        rule: '全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛。',
+                        luckysquid: '',
+                    },
+                    {
+                        unit: '1隊',
+                        title: '喵頭目超QQQQQ',
+                        image: './asset/haganemewmew.jpg',
+                        sponsor: '超可愛喵頭目鋼鐵',
+                        rule: '全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛。',
+                        luckysquid: '',
+                    },
+                ],
+            }
+        })
+    </script>
 </body>
+
 </html>
