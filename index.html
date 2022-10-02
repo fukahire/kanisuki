@@ -21,97 +21,280 @@
 
 <body class=" bg-[#131313]">
     <!-- 全體 -->
-    <div id="app" class="h-screen w-screen
+    <div id="app" class="h-screen w-full
     flex justify-center gap
     font-sans
     ">
         <!-- container -->
-        <div class="w-[1200px] px-4">
+        <div class="max-w-[1200px] w-full px-4">
             <!-- banner -->
-            <div class="w-full bg-white h-[250px] rounded-md">
-                <div>banner(配色暫時隨便配)目前1200*250px 幹哩娘為啥吃不到</div>
+            <div class="w-full bg-white rounded-md">
+                <img src="./asset/ikaintrouble_banner.jpg" alt="">
             </div>
             <!-- content -->
             <div class="w-full bg-dark p-8 
             ">
                 <!-- 比賽章程 -->
-                <div id="theme">比賽章程</div>
-                <br><br><br><br><br><br><br><br><br><br>
-                <!-- 賽制 -->
-                <div id="contest">賽制</div>
-                <br><br><br><br><br><br><br><br><br><br>
-                <!-- 大會獎品 -->
-                <!-- title -->
-                <div id="award" class="h-8 p-4 bg-white flex justify-center align-center items-center text-lg font-medium mb-8">
-                    這裡是獎品區title
+                <div id="theme" class="h-8 p-4 scroll-mt-8
+                flex justify-center align-center items-center mb-12">
+                    <span class="font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2">
+                        比賽章程
+                    </span>
                 </div>
-                <div class="w-full flex flex-row flex-wrap items-stretch gap-[2%]">
-                    <div v-for="item in list" class="lg:w-[48%] flex flex-col
-                rounded-b-xl rounded-t-[30px] w-full">
-                        <!-- title -->
-                        <div class="w-full h-16 rounded-t-3xl
+                <div>
+                    <!-- 標題 -->
+                    <div class="rule-title">活動資訊</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>公開報名時間 ：10/7(五) 21:00 ~ 10/13(四) 24:00(GMT+8)</li>
+                            <li>募集人數：48/64/80人階段性擴增，若未滿48人報名則取消比賽，80人以後的報名列入備選。</li>
+                            <li>選秀時間：10/15、16(六、日)</li>
+                            <li>比賽時間：10/30(日) 19:45集合完畢，20:00準時開打。</li>
+                            <li>比賽Discord群組：斯普拉遁魚市場</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">參賽注意事項</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>請務必詳閱以下規則說明</li>
+                            <li>10/15、16(六、日)舉行選秀大會，詳情請看選秀辦法</li>
+                            <li class="rule-mark">本屆落難盃將有新人保障名額，3代加入的新朋友將享有最少25%的保證名額</li>
+                            <li>比賽相關活動詳情、即時狀況、聯絡等均於斯普拉遁魚市場 Discord 群組內進行，請參賽者務必加入</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">選秀辦法</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>選秀時間<br>
+                                10/15(六)：09:00~22:00<br>
+                                10/16(日)：20:00~22:00</li>
+                            <li>據參賽人數取12~20名玩家作為隊長，挑選方式以 <span class="rule-mark"> 二代 X power </span>為準，由高至低排序，如遇同樣 Rank
+                                區間玩家則以亂數決定選秀順序，如遇同樣 Rank 區間玩家大於隊長需求數量，一樣會以亂數抽選決定隊長資格</li>
+                            <li>選秀第一日，第一輪選秀將由各隊長填寫選秀志願，將依隊長順位最低的隊伍優先排入選手</li>
+                            <li>選秀第二日公布第一輪選秀結果，第二輪選秀將由順位最高的隊長開始挑選(1~20) 最後再由最低順位隊長挑選(20~1)完成選秀流程</li>
+                            <li>如隊長選秀日未能如期參與（失聯15分鐘以上），將會取消隊長資格，由次高順位的玩家遞補</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">對戰規則</div>
+                    <div class="text-[#e4e4e4]">
+                        為確保比賽進程順暢，請遵守以下規範：
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>初賽及決賽對戰地圖全地圖隨機抽選<br>
+                                <span class="rule-mark">初賽及決賽對戰場地皆以不重複為原則，請房主單場對戰結束後進行ban圖。</span>
+                            </li>
+                            <li>若無特殊需求，請由隊伍數字代號較小的一方負責開房。四強賽後由主辦指定轉播人員開房。</li>
+                            <li>每場對戰皆須在「所有隊伍」確認好前一階段對戰結果後再行開始，主辦會發布可開始進行對戰的訊息。</li>
+                            <li>請勿對選手或隊伍進行挑釁、誹謗中傷等行為。</li>
+                            <li>請保持充足睡眠規律生活不要睡過頭......(*´-ω-`人)</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">賽制</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>初賽：三戰兩勝(區域)</li>
+                            <li>BO3循環賽，分四大戰區進行比賽後各組取前2進入八強賽</li>
+                            <li>八強賽、準決賽、冠亞賽：五戰三勝(區域→塔樓→魚虎→蛤蜊→區域)</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">10/30(日)比賽當日時程預定</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li><span class="rule-mark">19:45</span> 集合完畢，進行當日賽事進程說明、隊伍代表交換FC</li>
+                            <li><span class="rule-mark">19:55</span> 賽程表確認，隊伍代表交換FC完畢</li>
+                            <li><span class="rule-mark">20:00</span> 初賽準時開打（60~100分鐘）
+                                <ul class="list-disc ml-8">
+                                    <li>12組，每3組1區：每組打BO3取前二（R3x20=60分）</li>
+                                    <li>16組，每4組1區：每組打BO3取前二（R4x20=80分）</li>
+                                    <li>20組，每5組1區：每組打BO3取前二（R5x20=100分）</li>
+                                </ul>
+                            </li>
+                            <li><span class="rule-mark">21:40</span> 八強階段開打（BO5，30分鐘）</li>
+                            <li><span class="rule-mark">22:10</span> 準決賽開打 （BO5，30分鐘）</li>
+                            <li><span class="rule-mark">22:40</span> 冠亞賽開打 （BO5，30分鐘）</li>
+                            <li><span class="rule-mark">23:10</span> 比賽結束</li>
+                            <li>＊ 8強階段有超過10點的可能性，請自行判斷參賽時間是否能配合再行報名</li>
+                            <li>＊ 隊伍代表FC將在10/30(日)中午12:00前預先提供給各隊，可提前處理，但請配合於19:30-20:00間再次確認好友狀態</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">玩家／隊伍名稱</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>請自行每隊各自想好自己的隊伍名稱，不然大會會指派一個很爛的給你^^</li>
+                            <li>請勿登記違反善良風俗的名稱</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">私房創建</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>主辦宣佈可進行次回合對戰後，若10分鐘內負責開房的一方未開私房，則判定為另一方的勝利(2-0)</li>
+                            <li>房間開啟後，10分鐘內若另一方未全員進入私房，則判定為開房方的勝利(2-0)</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">對戰結果報告</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>由勝利方的隊伍代表於Discord內之「對戰結果報告」頻道進行回覆，並由主辦確認。</li>
+                            <li>報告方式請依照下方格式，以利分數統計進行：</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">初賽順位決定方式</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>勝利數>初賽內雙隊伍直接對決結果>BO3賽中的敗場數</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">實況轉播</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <li>主辦方有可能會安插工作人員進入私房轉播，轉播場次將與對戰流程表依同公布，請知悉。</li>
+                            <li>官方轉播：</li>
+                        </ol>
+                    </div>
+                    <!-- 標題 -->
+                    <div class="rule-title">問題回報</div>
+                    <div>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">規則／場地／隊伍設定錯了，怎麼辦？
+                            <li>若有選擇錯誤情形，請重開房，雙方以同樣地圖規則、同樣武器組成進行對戰。</li>
+                            <li>若房主方連續兩次選擇錯誤，則該場對戰結果判定為對方勝利。</li>
+                            <li>若有選擇錯誤情形發生，請非房主方不要推動規則，由房主方將該場對戰迅速結束。</li>
+                            <li>若非房主方推動規則，則該場對戰繼續進行，對戰結果列入計分。</li>
+                        </ol>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">斷線怎麼辦？
+                            <li>對戰開始60秒內斷線：請重開房，雙方以同樣地圖規則、同樣武器組成、裝備進行對戰。</li>
+                            <li>對戰開始60秒內同一隊伍參賽者第二次斷線：請繼續進行對戰。</li>
+                            <li>對戰開始60秒後斷線：請繼續進行對戰。</li>
+                            <li>若為開房方斷線，且為必須重新開房的情況，請由另一方重新開房。<br>
+                                ＊ 60秒內：倒數時間顯示4:00(含)以前，如有疑慮請務必錄影。</li>
+                        </ol>
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">衝線怎麼辦？
+                            <li>比賽開始前請務必提前確認個人網路狀況，如開房後有衝線情形請立刻於Discord內之「問題回報」頻道提出，由主辦方協助調整開房事宜。</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- 賽制 -->
+                <div id="contest" class="h-8 p-4 scroll-mt-8
+                flex justify-center align-center items-center mb-12">
+                    <span class="font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2">
+                        賽制
+                    </span>
+                </div>
+                <!-- 標題 -->
+                <div>
+                    <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                        <li>初賽：搶地</li>
+                        <li>複賽：地塔魚蛤地
+                            <ol class="list-disc ml-8">
+                                <li>48人/12組/4區/新手保底12人</li>
+                                <li>64人/16組/4區/新手保底16人</li>
+                                <li>80人/20組/4區/新手保底20人</li>
+                            </ol>
+                        </li>
+                        <li>預賽：
+                            <ol class="list-disc ml-8">
+                                <li>12組/3組/區：每組打BO3取前二（R2x20=40分）</li>
+                                <li>16組/4組/區：每組打BO3取前二（R3x20=60分）</li>
+                                <li>20組/5組/區：每組打BO3取前二（R5x20=100分）</li>
+                            </ol>
+                        </li>
+                        <li>準決賽：BO5（30分）</li>
+                        <li>冠亞賽：BO5（30分）</li>
+                        <li>總共 210 分（3.5 小時)</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- 大會獎品 -->
+            <!-- title -->
+            <div id="award" class="h-8 p-4 scroll-mt-8
+                flex justify-center align-center items-center mb-12">
+                <span class="font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2">
+                    大會獎品
+                </span>
+            </div>
+            <div class="w-full flex flex-row flex-wrap items-stretch gap-[2%]">
+                <div v-for="item in list" class="lg:w-[48%] flex flex-col w-full">
+                    <!-- title -->
+                    <div class="w-full h-16
                     flex flex-row justify-between items-center overflow-hidden
-                    bg-[#FD85FF] px-2
+                    bg-gradient-to-r from-[#f7b5d1] via-[#ae7eec] to-[#7dc0eb]
+                    bg-cover px-2
                     ">
-                            <div class="flex flex-row h-full items-center gap-3">
-                                <div class="w-[4.5rem] h-[70%] rounded-full p-4 ml-2 bg-[#131313]
-                        text-white text-center flex justify-center items-center">{{item.unit}}</div>
-                                <div class="flex flex-col">
-                                    <div class="text-sm">{{item.luckysquid}}</div>
-                                    <div class="text-md font-bold">{{item.title}}</div>
-                                </div>
+                        <div class="flex flex-row h-full items-center gap-3">
+                            <div class="w-[4.5rem] h-[70%] rounded-full p-4 ml-2
+                                bg-[#1d1d1d]
+                                text-white text-center flex justify-center items-center">{{item.unit}}</div>
+                            <div class="flex flex-col">
+                                <div class="text-sm">{{item.luckysquid}}</div>
+                                <div class="text-md font-bold">{{item.title}}</div>
                             </div>
-                            <!-- <div class="px-6 bg-black h-full flex justify-center items-center">
+                        </div>
+                        <!-- <div class="px-6 bg-black h-full flex justify-center items-center">
                             <div class="w-8 h-8">
                                 這裡放icon
                                 <img class="w-full h-full" 
                                 src="./asset/ika.png" alt="">
                             </div>
                         </div> -->
+                    </div>
+                    <!-- 獎品內容 -->
+                    <div class="flex flex-col items-center bg-[#1D1D1D] px-6 py-2 shadow-2xl">
+                        <!-- 贊助商 -->
+                        <div class="text-center px-4 py-1 mt-2 text-[#f9b0ff] border-[#f9b0ff]">{{item.sponsor}}贊助
                         </div>
-                        <!-- 獎品內容 -->
-                        <div class="flex flex-col items-center rounded-b-3xl bg-[#1D1D1D] px-6 py-2 shadow-2xl">
-                            <!-- 贊助商 -->
-                            <div class="text-center px-4 py-1 mt-2 text-[#FD85FF] border-[#FD85FF]">{{item.sponsor}}贊助
+                        <div class="flex flex-row items-center w-full gap-2 py-4 border-t-[0.5px] border-[#FD85FF]">
+                            <!-- 圖片 -->
+                            <div class="w-[40%] overflow-hidden rounded-2xl">
+                                <img :src='item.image' alt="">
                             </div>
-                            <div class="flex flex-row items-center w-full gap-2 py-4 border-t-[0.5px] border-[#FD85FF]">
-                                <!-- 圖片 -->
-                                <div class="w-[40%] overflow-hidden rounded-2xl">
-                                    <img :src='item.image' alt="">
-                                </div>
-                                <!-- 內容 -->
-                                <div class="w-[60%] flex flex-col px-2 text-white">
-                                    <div class="">{{item.rule}}</div>
-                                </div>
+                            <!-- 內容 -->
+                            <div class="w-[60%] flex flex-col px-2 text-white">
+                                <div class="">{{item.rule}}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- 工作人員 -->
-                <div id="staff">工作人員</div>
-                <br><br><br><br><br><br><br><br><br><br>
             </div>
+            <!-- 工作人員 -->
+            <!-- <div id="staff" class="h-8 p-4 scroll-mt-8
+                flex justify-center align-center items-center mb-12">
+                <span class="font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2">
+                    工作人員
+                </span>
+            </div> -->
+            <br><br><br><br><br><br><br><br><br><br>
         </div>
     </div>
+    </div>
     <!-- nav -->
-    <div class="fixed flex justify-center items-center
-    bottom-0 w-full h-16 bg-slate-500">
+    <!-- <div class="fixed blur-md h-14 w-full bottom-0
+     bg-gradient-to-r from-violet-500 to-fuchsia-500"></div> -->
+    <div class="fixed flex justify-center items-center backdrop-blur-xl 
+    bottom-0 w-full h-14">
         <ul class="flex justify-between items-center w-[60%] gap-6">
             <li class="flex justify-between items-center w-[60%]">
                 <ul class="flex flex-center items-center justify-between w-full">
-                    <li class="text-white text-lg"><a href="#theme">比賽章程</a></li>
-                    <li class="text-white text-lg"><a href="#contest">賽制</a></li>
-                    <li class="text-white text-lg"><a href="#award">大會獎品</a></li>
-                    <li class="text-white text-lg"><a href="#staff">工作人員</a></li>
+                    <li class="nav-btn"><a href="#theme">比賽章程</a></li>
+                    <li class="nav-btn"><a href="#contest">賽制</a></li>
+                    <li class="nav-btn"><a href="#award">大會獎品</a></li>
+                    <li class="nav-btn"><a href="#staff">工作人員</a></li>
                 </ul>
             </li>
             <li>
-            <li><a href=""
-                    class="block font-sans rounded-3xl w-40 h-12 text-lg bg-slate-500 font-medium text-white shadow-lg text-center leading-[48px] md:hover:bg-zinc-700 md:hover:text-maingreen">我要報名</a>
-            </li>
-            <li><a href=""
-                    class="block font-sans rounded-3xl w-40 h-12 text-lg bg-slate-500 font-medium text-white shadow-lg text-center leading-[48px] md:hover:bg-zinc-700 md:hover:text-maingreen">我想贊助</a>
-            </li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform"
+                        target="_blank" class="nav-btn_spec">我要報名</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
+                        target="_blank" class="nav-btn_spec">我想贊助</a></li>
+                <li><a href="https://drive.google.com/drive/u/0/folders/1VMvffbRU6sXXeE7ifOFmrftT0VRQynTF"
+                    target="_blank" class="nav-btn_spec">大會素材</a></li>
             </li>
         </ul>
     </div>
@@ -146,6 +329,12 @@
                         luckysquid: '',
                     },
                 ],
+                rule: [
+                    {
+                        title: '你好',
+                        rulecontent: '<div class="bold">1111</div><div>2222</div><div>333</div>',
+                    }
+                ]
             }
         })
     </script>

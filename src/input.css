@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .rule-title {
+        @apply font-medium text-lg text-[#e4e4e4] border-b-2 text-[#e4e4e4] p-2 mb-4;
+    }
+    .rule-mark {
+        @apply font-medium text-[#f8b1ff];
+    }
+    .nav-btn {
+        @apply text-white text-lg hover:text-[#9be2ff];
+    }
+    .nav-btn_spec {
+        @apply text-[#f8b1ff] text-lg hover:text-[#9be2ff];
+    }
+}
