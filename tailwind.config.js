@@ -5,7 +5,6 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: "'Noto Sans TC', sans-serif",
-        huninn:"'HunInn'",
       },
       colors: {
         'mainred': '#FF4177',
