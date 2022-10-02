@@ -22,7 +22,7 @@
         @apply font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2;
     }
     .ytr-icon {
-        @apply rounded-full overflow-hidden w-28 bg-[url('.../asset/ytr_bg.jpg')] p-2 group-hover:rotate-45 ease-in duration-150;
+        @apply rounded-full overflow-hidden w-28 bg-[url('../asset/ytr_bg.jpg')] p-2 group-hover:rotate-45 ease-in duration-150;
     }
     .ytr-name {
         @apply text-white text-center text-lg font-bold text-[#F8b1ff] group-hover:text-[#9be2ff];
