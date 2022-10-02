@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="./asset/ikaintrouble3_favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +27,7 @@
     font-sans
     ">
         <!-- container -->
-        <div class="max-w-[1200px] w-full px-4">
+        <div class="max-w-[1200px] w-full md:px-4">
             <!-- banner -->
             <div class="w-full bg-white rounded-md">
                 <img src="./asset/ikaintrouble_banner.jpg" alt="">
@@ -35,9 +36,8 @@
             <div class="w-full bg-dark p-8 
             ">
                 <!-- 比賽章程 -->
-                <div id="theme" class="h-8 p-4 scroll-mt-8
-                flex justify-center align-center items-center mb-12">
-                    <span class="font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2">
+                <div id="theme" class="section-title">
+                    <span class="section-title_txt">
                         比賽章程
                     </span>
                 </div>
@@ -85,19 +85,10 @@
                             <li>初賽及決賽對戰地圖全地圖隨機抽選<br>
                                 <span class="rule-mark">初賽及決賽對戰場地皆以不重複為原則，請房主單場對戰結束後進行ban圖。</span>
                             </li>
-                            <li>若無特殊需求，請由隊伍數字代號較小的一方負責開房。四強賽後由主辦指定轉播人員開房。</li>
+                            <li>若無特殊需求，請由隊伍數字代號較小的一方負責開房。</li>
                             <li>每場對戰皆須在「所有隊伍」確認好前一階段對戰結果後再行開始，主辦會發布可開始進行對戰的訊息。</li>
                             <li>請勿對選手或隊伍進行挑釁、誹謗中傷等行為。</li>
                             <li>請保持充足睡眠規律生活不要睡過頭......(*´-ω-`人)</li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">賽制</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>初賽：三戰兩勝(區域)</li>
-                            <li>BO3循環賽，分四大戰區進行比賽後各組取前2進入八強賽</li>
-                            <li>八強賽、準決賽、冠亞賽：五戰三勝(區域→塔樓→魚虎→蛤蜊→區域)</li>
                         </ol>
                     </div>
                     <!-- 標題 -->
@@ -143,6 +134,18 @@
                         <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
                             <li>由勝利方的隊伍代表於Discord內之「對戰結果報告」頻道進行回覆，並由主辦確認。</li>
                             <li>報告方式請依照下方格式，以利分數統計進行：</li>
+                            <li>
+                                <div class="border-l-[2px] border-white pl-2 mt-2">
+                                    [隊伍A] 對 [隊伍B]<br>
+                                    [隊伍A] 勝<br>
+                                    [分數A] - [分數B]<br>
+                                    <br>
+                                    舉例：<br>
+                                    A3 對 D2<br>
+                                    A3 勝<br>
+                                    2 - 1
+                                </div>
+                            </li>
                         </ol>
                     </div>
                     <!-- 標題 -->
@@ -159,6 +162,42 @@
                             <li>主辦方有可能會安插工作人員進入私房轉播，轉播場次將與對戰流程表依同公布，請知悉。</li>
                             <li>官方轉播：</li>
                         </ol>
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="flex flex-col justify-center">
+                                <p class="text-center text-white text-lg border-b-[2px] border-white p-2">泰A組合</p>
+                                <div class="flex py-2 justify-center gap-2"><a href="https://www.youtube.com/channel/UCWVqclEBrX4vnNbLmm_Gt1g" target="_blank" class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
+                                    <div class="ytr-icon">
+                                        <img class="rounded-full" src="./asset/ytr_aa.jpg" alt="">
+                                    </div>
+                                    <span class="ytr-name">主播<br>AA</span>
+                                </a>
+                                <a href="https://www.youtube.com/c/Taylor_jbdxblgutaguta" target="_blank" class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
+                                    <div class="ytr-icon">
+                                        <img class="rounded-full" src="./asset/ytr_taylor.png" alt="">
+                                    </div>
+                                    <span class="ytr-name">賽評<br>泰勒</span>
+                                </a></div>
+                                
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <p class="text-center text-white text-lg border-b-[2px] border-white p-2">肉塔組合</p>
+                            <div class="flex py-2 justify-center gap-2">
+                                <a href="https://www.youtube.com/c/RONNKIEBrothers" target="_blank" class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
+                                    <div class="ytr-icon">
+                                        <img class="rounded-full" src="./asset/ytr_ron.jpg" alt="">
+                                    </div>
+                                    <span class="ytr-name">主播<br>肉肉先森</span>
+                                </a>
+                                <a href="https://www.youtube.com/c/%E7%91%9E%E5%A1%94" target="_blank" class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
+                                    <div class="ytr-icon">
+                                        <img class="rounded-full" src="./asset/ytr_rita.jpg" alt="">
+                                    </div>
+                                    <span class="ytr-name">賽評<br>瑞塔</span>
+                                </a>
+                            </div>
+                            </div>
+                            
+                        </div>
                     </div>
                     <!-- 標題 -->
                     <div class="rule-title">問題回報</div>
@@ -182,45 +221,43 @@
                     </div>
                 </div>
                 <!-- 賽制 -->
-                <div id="contest" class="h-8 p-4 scroll-mt-8
-                flex justify-center align-center items-center mb-12">
-                    <span class="font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2">
+                <div id="contest" class="section-title">
+                    <span class="section-title_txt">
                         賽制
                     </span>
                 </div>
                 <!-- 標題 -->
                 <div>
                     <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                        <li>初賽：搶地</li>
-                        <li>複賽：地塔魚蛤地
-                            <ol class="list-disc ml-8">
-                                <li>48人/12組/4區/新手保底12人</li>
-                                <li>64人/16組/4區/新手保底16人</li>
-                                <li>80人/20組/4區/新手保底20人</li>
-                            </ol>
-                        </li>
-                        <li>預賽：
+                        <li>初賽：規則區域，三戰兩勝循環賽，分四大戰區進行比賽後各組取前2進入八強賽
                             <ol class="list-disc ml-8">
                                 <li>12組/3組/區：每組打BO3取前二（R2x20=40分）</li>
                                 <li>16組/4組/區：每組打BO3取前二（R3x20=60分）</li>
                                 <li>20組/5組/區：每組打BO3取前二（R5x20=100分）</li>
                             </ol>
                         </li>
-                        <li>準決賽：BO5（30分）</li>
-                        <li>冠亞賽：BO5（30分）</li>
+                        <li>複賽：(區域→塔樓→魚虎→蛤蜊→區域)，五戰三勝
+                            <ol class="list-disc ml-8">
+                                <li>48人/12組/4區/新手保底12人</li>
+                                <li>64人/16組/4區/新手保底16人</li>
+                                <li>80人/20組/4區/新手保底20人</li>
+                            </ol>
+                        </li>
+                        <li>
+                        <li>準決賽：(區域→塔樓→魚虎→蛤蜊→區域)，五戰三勝（30分）</li>
+                        <li>冠亞賽：(區域→塔樓→魚虎→蛤蜊→區域)，五戰三勝（30分）</li>
                         <li>總共 210 分（3.5 小時)</li>
                     </ol>
                 </div>
             </div>
             <!-- 大會獎品 -->
             <!-- title -->
-            <div id="award" class="h-8 p-4 scroll-mt-8
-                flex justify-center align-center items-center mb-12">
-                <span class="font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2">
+            <div id="award" class="section-title">
+                <span class="section-title_txt">
                     大會獎品
                 </span>
             </div>
-            <div class="w-full flex flex-row flex-wrap items-stretch gap-[2%]">
+            <div class="w-full flex flex-col md:flex-row flex-wrap items-stretch gap-4 md:gap-[2%] px-8 md:px-0">
                 <div v-for="item in list" class="lg:w-[48%] flex flex-col w-full">
                     <!-- title -->
                     <div class="w-full h-16
@@ -234,7 +271,7 @@
                                 text-white text-center flex justify-center items-center">{{item.unit}}</div>
                             <div class="flex flex-col">
                                 <div class="text-sm">{{item.luckysquid}}</div>
-                                <div class="text-md font-bold">{{item.title}}</div>
+                                <div class="text-md font-bold">「{{item.title}}」獎</div>
                             </div>
                         </div>
                         <!-- <div class="px-6 bg-black h-full flex justify-center items-center">
@@ -250,13 +287,13 @@
                         <!-- 贊助商 -->
                         <div class="text-center px-4 py-1 mt-2 text-[#f9b0ff] border-[#f9b0ff]">{{item.sponsor}}贊助
                         </div>
-                        <div class="flex flex-row items-center w-full gap-2 py-4 border-t-[0.5px] border-[#FD85FF]">
+                        <div class="flex flex-col md:flex-row items-center w-full gap-2 py-4 border-t-[0.5px] border-[#FD85FF]">
                             <!-- 圖片 -->
-                            <div class="w-[40%] overflow-hidden rounded-2xl">
+                            <div class="w-[80%] md:w-[40%] overflow-hidden rounded-2xl">
                                 <img :src='item.image' alt="">
                             </div>
                             <!-- 內容 -->
-                            <div class="w-[60%] flex flex-col px-2 text-white">
+                            <div class="w-full md:w-[60%] flex flex-col px-2 text-white">
                                 <div class="">{{item.rule}}</div>
                             </div>
                         </div>
@@ -264,9 +301,8 @@
                 </div>
             </div>
             <!-- 工作人員 -->
-            <!-- <div id="staff" class="h-8 p-4 scroll-mt-8
-                flex justify-center align-center items-center mb-12">
-                <span class="font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2">
+            <!-- <div id="staff" class="section-title">
+                <span class="section-title_txt">
                     工作人員
                 </span>
             </div> -->
@@ -277,24 +313,22 @@
     <!-- nav -->
     <!-- <div class="fixed blur-md h-14 w-full bottom-0
      bg-gradient-to-r from-violet-500 to-fuchsia-500"></div> -->
-    <div class="fixed flex justify-center items-center backdrop-blur-xl 
+    <div class="hidden md:flex fixed justify-center items-center backdrop-blur-xl 
     bottom-0 w-full h-14">
         <ul class="flex justify-between items-center w-[60%] gap-6">
-            <li class="flex justify-between items-center w-[60%]">
+            <li class="flex justify-between items-center w-[100%]">
                 <ul class="flex flex-center items-center justify-between w-full">
                     <li class="nav-btn"><a href="#theme">比賽章程</a></li>
                     <li class="nav-btn"><a href="#contest">賽制</a></li>
                     <li class="nav-btn"><a href="#award">大會獎品</a></li>
-                    <li class="nav-btn"><a href="#staff">工作人員</a></li>
+                    <!-- <li class="nav-btn"><a href="#staff">工作人員</a></li> -->
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform"
+                            target="_blank" class="nav-btn_spec">我要報名</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
+                            target="_blank" class="nav-btn_spec">我想贊助</a></li>
+                    <li><a href="https://drive.google.com/drive/u/0/folders/1VMvffbRU6sXXeE7ifOFmrftT0VRQynTF"
+                            target="_blank" class="nav-btn_spec">大會素材</a></li>
                 </ul>
-            </li>
-            <li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform"
-                        target="_blank" class="nav-btn_spec">我要報名</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
-                        target="_blank" class="nav-btn_spec">我想贊助</a></li>
-                <li><a href="https://drive.google.com/drive/u/0/folders/1VMvffbRU6sXXeE7ifOFmrftT0VRQynTF"
-                    target="_blank" class="nav-btn_spec">大會素材</a></li>
             </li>
         </ul>
     </div>
@@ -306,26 +340,10 @@
                 list: [
                     {
                         unit: '1隊',
-                        title: '喵頭目超QQQQQ',
-                        image: './asset/haganemewmew.jpg',
-                        sponsor: '超可愛喵頭目鋼鐵',
-                        rule: '全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛。',
-                        luckysquid: '',
-                    },
-                    {
-                        unit: '1隊',
-                        title: '喵頭目超QQQQQ',
-                        image: './asset/haganemewmew.jpg',
-                        sponsor: '超可愛喵頭目鋼鐵',
-                        rule: '全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛。',
-                        luckysquid: '',
-                    },
-                    {
-                        unit: '1隊',
-                        title: '喵頭目超QQQQQ',
-                        image: './asset/haganemewmew.jpg',
-                        sponsor: '超可愛喵頭目鋼鐵',
-                        rule: '全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛全員蘑菇頭 一個蘑菇頭1分，出場幾次就計幾次，隊名要叫蘑菇頭好可愛。',
+                        title: '演算法',
+                        image: './asset/prize_taylor.jpg',
+                        sponsor: '勁爆大象部落模擬',
+                        rule: '由主辦選出最有創意的隊伍名稱',
                         luckysquid: '',
                     },
                 ],
