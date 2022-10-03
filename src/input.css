@@ -28,6 +28,6 @@
         @apply text-white text-center text-lg font-bold text-[#F8b1ff] md:group-hover:text-[#9be2ff];
     }
     .navmobile-btn {
-        @apply text-black text-bold leading-3 bg-[url('../asset/ytr_bg.jpg')] w-[70px] h-[70px] text-center rounded-[70px] justify-center items-center;
+        @apply text-black text-bold leading-3 bg-cover bg-[url('../asset/ytr_bg.jpg')] w-[70px] h-[70px] text-center rounded-[70px] justify-center items-center;
     }
 }
