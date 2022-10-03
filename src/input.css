@@ -4,16 +4,16 @@
 
 @layer components {
     .rule-title {
-        @apply font-medium text-lg text-[#e4e4e4] border-b-2 text-[#e4e4e4] p-2 mb-4;
+        @apply font-medium text-xl text-[#e4e4e4] border-b-2 text-[#e4e4e4] p-2 mb-4;
     }
     .rule-mark {
         @apply font-medium text-[#f8b1ff];
     }
     .nav-btn {
-        @apply text-white text-lg hover:text-[#9be2ff];
+        @apply text-white text-lg md:hover:text-[#9be2ff];
     }
     .nav-btn_spec {
-        @apply text-[#f8b1ff] text-lg hover:text-[#9be2ff];
+        @apply text-[#f8b1ff] text-lg md:hover:text-[#9be2ff];
     }
     .section-title {
         @apply h-8 p-4 scroll-mt-8 flex justify-center items-center items-center mb-24 mt-12;
@@ -22,9 +22,9 @@
         @apply font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2;
     }
     .ytr-icon {
-        @apply rounded-full overflow-hidden w-28 bg-[url('../asset/ytr_bg.jpg')] p-2 group-hover:rotate-45 ease-in duration-150;
+        @apply rounded-full overflow-hidden w-28 bg-[url('../asset/ytr_bg.jpg')] p-2 md:group-hover:rotate-45 ease-in duration-150;
     }
     .ytr-name {
-        @apply text-white text-center text-lg font-bold text-[#F8b1ff] group-hover:text-[#9be2ff];
+        @apply text-white text-center text-lg font-bold text-[#F8b1ff] md:group-hover:text-[#9be2ff];
     }
 }

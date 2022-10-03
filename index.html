@@ -17,7 +17,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" type="text/javascript" charset="utf-8"></script>
     <title>落難杯3</title>
 </head>
-
+<style>
+    .active{
+        width: 100%;
+    }
+</style>
 <body class=" bg-[#131313]">
     <!-- 全體 -->
     <div id="app" class="h-screen w-full
@@ -27,8 +31,13 @@
         <!-- container -->
         <div class="max-w-[1200px] w-full md:px-4">
             <!-- banner -->
-            <div class="w-full bg-white rounded-md">
-                <img src="./asset/ikaintrouble_banner.jpg" alt="">
+            <div class="w-full bg-white rounded-md mb-12">
+                <img class="hidden md:block" src="./asset/ikaintrouble_banner.jpg" alt="">
+                <img class="block md:hidden" src="./asset/ikaintrouble_banner_mobile.jpg" alt="">
+            </div>
+            <!-- caption -->
+            <div class="p-8 w-[80%] bg-[url('../asset/ytr_bg.jpg')] bg-cover font-semibold m-auto">
+                <p>花枝3上市接近滿月，充滿暴風武器的環境、侵略性極強的大招、激烈碰撞的地圖前線、<span class="line-through">宛如大型公測的踩BUG遊戲</span>，對戰鬥感到疲倦的你，是否渴望新的力量？落難杯與斯普拉遁魚市場合作，共同推廣花枝真格競賽，期望能扶植各年幼海鮮，不再擔心被4X老害打屁屁，快來填寫報名表，成為人人喊抱的粗大腿吧！</p>
             </div>
             <!-- content -->
             <div class="w-full bg-dark p-8 
@@ -48,17 +57,18 @@
                             <li>募集人數：48/64/80人階段性擴增，若未滿48人報名則取消比賽，80人以後的報名列入備選。</li>
                             <li>選秀時間：10/15、16(六、日)</li>
                             <li>比賽時間：10/30(日) 19:45集合完畢，20:00準時開打。</li>
-                            <li>比賽Discord群組：斯普拉遁魚市場</li>
+                            <li><a href="https://discord.gg/VTjUQkB9uv">比賽Discord群組：<span class="text-[#8be2fe] text-lg">斯普拉遁魚市場</span> </a></li>
                         </ol>
                     </div>
                     <!-- 標題 -->
                     <div class="rule-title">參賽注意事項</div>
                     <div>
                         <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>請務必詳閱以下規則說明</li>
+                            <p>請務必詳閱以下規則說明</p> 
                             <li>10/15、16(六、日)舉行選秀大會，詳情請看選秀辦法</li>
                             <li class="rule-mark">本屆落難盃將有新人保障名額，3代加入的新朋友將享有最少25%的保證名額</li>
                             <li>比賽相關活動詳情、即時狀況、聯絡等均於斯普拉遁魚市場 Discord 群組內進行，請參賽者務必加入</li>
+                            <li>如有改機、作弊、謊報RANK等破壞遊戲與比賽規則的行為，將無條件判定不具比賽資格，若有獲獎亦取消相關獎項，且終生不得參加魚市場相關比賽與活動</li>
                         </ol>
                     </div>
                     <!-- 標題 -->
@@ -78,8 +88,9 @@
                     <!-- 標題 -->
                     <div class="rule-title">對戰規則</div>
                     <div class="text-[#e4e4e4]">
-                        為確保比賽進程順暢，請遵守以下規範：
+                        
                         <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <p>為確保比賽進程順暢，請遵守以下規範：</p>
                             <li>初賽及決賽對戰地圖全地圖隨機抽選<br>
                                 <span class="rule-mark">初賽及決賽對戰場地皆以不重複為原則，請房主單場對戰結束後進行ban圖。</span>
                             </li>
@@ -106,8 +117,8 @@
                             <li><span class="rule-mark">22:10</span> 準決賽開打 （BO5，30分鐘）</li>
                             <li><span class="rule-mark">22:40</span> 冠亞賽開打 （BO5，30分鐘）</li>
                             <li><span class="rule-mark">23:10</span> 比賽結束</li>
-                            <li>＊ 8強階段有超過10點的可能性，請自行判斷參賽時間是否能配合再行報名</li>
-                            <li>＊ 隊伍代表FC將在10/30(日)中午12:00前預先提供給各隊，可提前處理，但請配合於19:30-20:00間再次確認好友狀態</li>
+                            <li>8強階段有超過10點的可能性，請自行判斷參賽時間是否能配合再行報名</li>
+                            <li>隊伍代表FC將在10/30(日)中午12:00前預先提供給各隊，可提前處理，但請配合於19:30-20:00間再次確認好友狀態</li>
                         </ol>
                     </div>
                     <!-- 標題 -->
@@ -200,20 +211,23 @@
                     <!-- 標題 -->
                     <div class="rule-title">問題回報</div>
                     <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">規則／場地／隊伍設定錯了，怎麼辦？
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <p class="text-[#8be2fe] text-lg">Q.規則／場地／隊伍設定錯了，怎麼辦？</p>
                             <li>若有選擇錯誤情形，請重開房，雙方以同樣地圖規則、同樣武器組成進行對戰。</li>
                             <li>若房主方連續兩次選擇錯誤，則該場對戰結果判定為對方勝利。</li>
                             <li>若有選擇錯誤情形發生，請非房主方不要推動規則，由房主方將該場對戰迅速結束。</li>
                             <li>若非房主方推動規則，則該場對戰繼續進行，對戰結果列入計分。</li>
                         </ol>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">斷線怎麼辦？
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <p class="text-[#8be2fe] text-lg">Q.斷線怎麼辦？</p>
                             <li>對戰開始60秒內斷線：請重開房，雙方以同樣地圖規則、同樣武器組成、裝備進行對戰。</li>
                             <li>對戰開始60秒內同一隊伍參賽者第二次斷線：請繼續進行對戰。</li>
                             <li>對戰開始60秒後斷線：請繼續進行對戰。</li>
                             <li>若為開房方斷線，且為必須重新開房的情況，請由另一方重新開房。<br>
                                 ＊ 60秒內：倒數時間顯示4:00(含)以前，如有疑慮請務必錄影。</li>
                         </ol>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">衝線怎麼辦？
+                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
+                            <p class="text-[#8be2fe] text-lg">Q.衝線怎麼辦？</p>
                             <li>比賽開始前請務必提前確認個人網路狀況，如開房後有衝線情形請立刻於Discord內之「問題回報」頻道提出，由主辦方協助調整開房事宜。</li>
                         </ol>
                     </div>
@@ -323,12 +337,29 @@
                             target="_blank" class="nav-btn_spec">我要報名</a></li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
                             target="_blank" class="nav-btn_spec">我想贊助</a></li>
-                    <li><a href="https://drive.google.com/drive/u/0/folders/1VMvffbRU6sXXeE7ifOFmrftT0VRQynTF"
-                            target="_blank" class="nav-btn_spec">大會素材</a></li>
                 </ul>
             </li>
         </ul>
     </div>
+    <div id="test">
+        <!-- 打開鍵 -->
+    <button  class="fixed bottom-5 right-5 hover:text-white z-10" @click=" mobile = 'no' ">打開</button>
+    <!-- nav mobile -->
+    <!-- <div class="fixed flex h-screen overflow-hidden items-center justify-center bg-black" :class="{active:navmobile}">
+        <ul class="flex flex-col gap-4 text-center text-white">
+          <li><a href="#theme">比賽章程</a></li>
+          <li><a href="#contest">賽制</a></li>
+          <li><a href="#award">大會獎品</a></li>
+          <li><a href="#staff">工作人員</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform">我要報名</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform">我想贊助</a></li>
+        </ul>
+        <div class="absolute bottom-5 right-5" @click="navmobile = !navmobile">叉叉</div>
+    </div> -->
+    </div>
+    
+      
+      
     <!--載入 Vue 的 CDN -->
     <script type="text/javascript">
         var app = new Vue({
@@ -337,19 +368,27 @@
                 list: [
                     {
                         unit: '1隊',
-                        title: '演算法',
-                        image: './asset/prize_taylor.jpg',
-                        sponsor: '勁爆大象部落模擬',
-                        rule: '由主辦選出最有創意的隊伍名稱',
+                        title: '冠軍優勝',
+                        image: './asset/prize_default.jpg',
+                        sponsor: '強力募集',
+                        rule: '落難杯冠軍隊伍得主',
+                        luckysquid: '',
+                    },
+                    {
+                        unit: '1隊',
+                        title: '亞軍優勝',
+                        image: './asset/prize_default.jpg',
+                        sponsor: '強力募集',
+                        rule: '落難杯亞軍隊伍得主',
                         luckysquid: '',
                     },
                 ],
-                rule: [
-                    {
-                        title: '你好',
-                        rulecontent: '<div class="bold">1111</div><div>2222</div><div>333</div>',
-                    }
-                ]
+            }
+        })
+        var test = new Vue({
+            el:'#test',
+            data: {
+                mobile: 'hi',
             }
         })
     </script>
