@@ -135,6 +135,7 @@
                         <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
                             <li>主辦宣佈可進行次回合對戰後，若10分鐘內負責開房的一方未開私房，則判定為另一方的勝利(2-0)</li>
                             <li>房間開啟後，10分鐘內若另一方未全員進入私房，則判定為開房方的勝利(2-0)</li>
+                            <li>10分鐘內若開房方未全員進入私房，則判定為另一方的勝利(2-0)</li>
                         </ol>
                     </div>
                     <!-- 標題 -->
@@ -169,7 +170,7 @@
                     <div>
                         <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
                             <li>主辦方有可能會安插工作人員進入私房轉播，轉播場次將與對戰流程表依同公布，請知悉。</li>
-                            <li>官方轉播：</li>
+                            <li>官方轉播：(點擊頭像前往主播個人頻道)</li>
                         </ol>
                         <div class="flex flex-col md:flex-row gap-8">
                             <div class="flex flex-col justify-center">
@@ -268,6 +269,7 @@
                     大會獎品
                 </span>
             </div>
+            <p class="text-white flex justify-center mb-12">贊助徵求中</p>
             <div class="w-full flex flex-col md:flex-row flex-wrap items-stretch gap-4 md:gap-[2%] px-8 md:px-0">
                 <div v-for="item in list" class="lg:w-[48%] flex flex-col w-full">
                     <!-- title -->
@@ -312,11 +314,28 @@
                 </div>
             </div>
             <!-- 工作人員 -->
-            <!-- <div id="staff" class="section-title">
+            <div id="staff" class="section-title">
                 <span class="section-title_txt">
                     工作人員
                 </span>
-            </div> -->
+            </div>
+            <p class="text-[#e4e4e4] text-center mb-12">*點擊可前往個人資料頁面</p>
+            <div class="flex flex-wrap gap-6 px-8">
+                <a v-for="item in staff" class="lg:w-[48%] flex flex-row w-full gap-8 group" :href="item.url" target="_blank">
+                    <div class="flex flex-col justify-center items-center relative">
+                        <div class="ytr-icon">
+                            <img :src="item.image" class="rounded-full" alt="">
+                        </div>
+                        <p class="bg-[#F8b1ff] px-2 py-0.5 rounded-lg font-extrabold absolute bottom-0 right-0 rotate-6 ring-4 ring-[#4520ea] text-[#4520ea]">{{item.name}}</p>
+                    </div>
+                    <div class="flex items-center justify-center gap-4 relative drop-shadow-md">
+                        <div class=" w-3 overflow-hidden inline-block absolute left-0 -translate-x-5 top-1/2 -translate-y-1/2">
+                            <div class=" h-4 bg-[#9be2ff] rotate-45 transform origin-bottom-right md:group-hover:bg-[#fefab7]"></div>
+                        </div>
+                        <div class="md:group-hover:bg-[#fefab7] bg-[#9be2ff] p-4 w-full rounded-xl"><p>{{item.quote}}</p></div>
+                    </div>
+                </a>
+            </div>
             <br><br><br><br><br><br><br><br><br><br>
             <!-- <div class="border-t-2 border-white text-center p-4 text-white my-8">
                 斯普拉遁魚市場
@@ -337,11 +356,13 @@
                     <li class="nav-btn"><a href="#theme">比賽章程</a></li>
                     <li class="nav-btn"><a href="#contest">賽制</a></li>
                     <li class="nav-btn"><a href="#award">大會獎品</a></li>
-                    <!-- <li class="nav-btn"><a href="#staff">工作人員</a></li> -->
+                    <li class="nav-btn"><a href="#staff">工作人員</a></li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform"
                             target="_blank" class="nav-btn_spec">我要報名</a></li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
                             target="_blank" class="nav-btn_spec">我想贊助</a></li>
+                    <li><a href="https://discord.gg/VTjUQkB9uv"
+                        target="_blank" class="nav-btn_spec">聯絡我們</a></li>
                 </ul>
             </li>
         </ul>
@@ -376,22 +397,72 @@
         var app = new Vue({
             el: '#app',
             data: {
-                list: [
+                // list: [
+                //     {
+                //         unit: '1隊',
+                //         title: '冠軍優勝',
+                //         image: './asset/prize_default.jpg',
+                //         sponsor: '強力募集',
+                //         rule: '落難杯冠軍隊伍得主',
+                //         luckysquid: '',
+                //     },
+                //     {
+                //         unit: '1隊',
+                //         title: '亞軍優勝',
+                //         image: './asset/prize_default.jpg',
+                //         sponsor: '強力募集',
+                //         rule: '落難杯亞軍隊伍得主',
+                //         luckysquid: '',
+                //     },
+                // ],
+                staff:[
                     {
-                        unit: '1隊',
-                        title: '冠軍優勝',
-                        image: './asset/prize_default.jpg',
-                        sponsor: '強力募集',
-                        rule: '落難杯冠軍隊伍得主',
-                        luckysquid: '',
+                        url:'https://twitter.com/Syu_Tao',
+                        image:'./asset/staff_syuto.jpg',
+                        name:'秀托',
+                        quote:'芋報從速'
                     },
                     {
-                        unit: '1隊',
-                        title: '亞軍優勝',
-                        image: './asset/prize_default.jpg',
-                        sponsor: '強力募集',
-                        rule: '落難杯亞軍隊伍得主',
-                        luckysquid: '',
+                        url:'https://www.youtube.com/c/Taylor_jbdxblgutaguta',
+                        image:'./asset/ytr_taylor.png',
+                        name:'泰勒',
+                        quote:'慢了'
+                    },
+                    {
+                        url:'https://lit.link/en/ChounoRin',
+                        image:'./asset/staff_sana.jpg',
+                        name:'那那',
+                        quote:'有事請聯絡主辦'
+                    },
+                    {
+                        url:'https://www.youtube.com/channel/UCWVqclEBrX4vnNbLmm_Gt1g',
+                        image:'./asset/ytr_aa.jpg',
+                        name:'AA',
+                        quote:'猶豫就會敗北'
+                    },
+                    {
+                        url:'https://twitter.com/kawaiilanpa',
+                        image:'./asset/staff_apa.jpg',
+                        name:'APA',
+                        quote:'魚翅超會寫網頁，謝謝你，魚翅超人'
+                    },
+                    {
+                        url:'https://twitter.com/annaki40734081',
+                        image:'./asset/staff_fukahire.jpg',
+                        name:'魚翅',
+                        quote:'偷懶打真格都沒在寫網頁'
+                    },
+                    {
+                        url:'https://twitter.com/icelin1717',
+                        image:'./asset/staff_ice.png',
+                        name:'冰塊',
+                        quote:'獸人'
+                    },
+                    {
+                        url:'https://twitter.com/dada56746',
+                        image:'./asset/staff_dada.png',
+                        name:'達達',
+                        quote:'我今天要爬999'
                     },
                 ],
             }

@@ -16,7 +16,7 @@
         @apply text-[#f8b1ff] text-lg md:hover:text-[#9be2ff];
     }
     .section-title {
-        @apply h-8 p-4 scroll-mt-8 flex justify-center items-center items-center mb-24 mt-12;
+        @apply h-8 p-4 scroll-mt-8 flex justify-center items-center items-center mb-12 mt-24;
     }
     .section-title_txt {
         @apply font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2;
