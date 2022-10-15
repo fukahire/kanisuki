@@ -279,8 +279,8 @@
                 </span>
             </div>
             <p class="text-white flex justify-center mb-12">*得獎條件會在比賽結束後公布</p>
-            <div class="w-full flex flex-col md:flex-row flex-wrap items-stretch gap-4 md:gap-[2%] px-8 md:px-0">
-                <div v-for="item in list" class="lg:w-[48%] flex flex-col w-full">
+            <div class="w-full grid grid-cols-1 lg:grid-cols-2 grid-flow-row gap-4 md:flex-row flex-wrap items-stretch gap-4 px-8 md:px-0">
+                <div v-for="item in list" class=" flex flex-col w-full">
                     <!-- title -->
                     <div class="w-full h-16
                     flex flex-row justify-between items-center overflow-hidden
@@ -337,7 +337,7 @@
             </div>
             <p class="text-[#e4e4e4] text-center mb-12">*點擊可前往個人資料頁面</p>
             <div class="flex flex-wrap gap-6 px-8">
-                <a v-for="item in staff" class="lg:w-[48%] flex flex-row w-full  gap-8 group" :href="item.url"
+                <a v-for="item in staff" class="lg:w-[48%] flex flex-row w-full gap-8 group" :href="item.url"
                     target="_blank">
                     <div class="flex flex-col justify-center items-center relative">
                         <div class="ytr-icon">
@@ -491,7 +491,7 @@
                         unit: '1位',
                         title: '最佳●●獎',
                         image: './asset/prize_empty.jpg',
-                        sponsor: 'Empty熱情贊助 ',
+                        sponsor: '連雅熱情贊助 ',
                         rule: '',
                         luckysquid: '',
                     },
@@ -523,7 +523,7 @@
                         unit: '1位',
                         title: '差點●●賞',
                         image: './asset/prize_cz.jpg',
-                        sponsor: '蜂蜜水熱情贊助 (繪師:雲姆)',
+                        sponsor: '雲畝熱情贊助',
                         rule: '',
                         luckysquid: '',
                     },
@@ -584,7 +584,7 @@
                         luckysquid: '',
                     },
                     {
-                        unit: '1位',
+                        unit: '2位',
                         title: '●蓋●賞',
                         image: './asset/prize_rios.jpg',
                         sponsor: 'Rios熱情贊助 ',
@@ -619,7 +619,7 @@
                         unit: '3隊',
                         title: '德●●克賞',
                         image: './asset/prize_alpha.jpg',
-                        sponsor: 'Alpha熱情贊助 ',
+                        sponsor: '阿嚕法熱情贊助 ',
                         rule: '',
                         luckysquid: '',
                     },
