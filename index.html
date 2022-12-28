@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="./asset/ikaintrouble3_favicon.ico" />
+    <link rel="icon" href="./asset/kani_favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
     <link href="./dist/output.css" rel="stylesheet">
     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" type="text/javascript" charset="utf-8"></script>
-    <title>落難杯3</title>
+    <title>趕蟹季 2023/01/15</title>
 </head>
 <style>
     .active {
@@ -23,299 +23,382 @@
     }
 </style>
 
-<body class=" bg-[#131313]">
+<body class="bg-zinc-800">
     <!-- 全體 -->
     <div id="app" class="h-screen w-full
-    flex justify-center gap
+    flex-col justify-center items-center gap
     font-sans
     ">
+        <!-- 主視覺 banner -->
+        <div class="w-full bg-white mb-8 bg-mainred flex justify-center py-20">
+            <img class="w-[300px]" src="./asset/kani_visual.png" alt="">
+            <!-- <img class="hidden md:block" src="./asset/ikaintrouble_banner.jpg" alt="">
+        <img class="block md:hidden" src="./asset/ikaintrouble_banner_mobile.jpg" alt=""> -->
+        </div>
         <!-- container -->
-        <div class="max-w-[1200px] w-full md:px-4">
-            <!-- banner -->
-            <div class="w-full bg-white rounded-md mb-12">
-                <img class="hidden md:block" src="./asset/ikaintrouble_banner.jpg" alt="">
-                <img class="block md:hidden" src="./asset/ikaintrouble_banner_mobile.jpg" alt="">
-            </div>
-            <!-- caption -->
-            <div class="p-8 w-[80%] bg-[url('../asset/ytr_bg.jpg')] bg-cover font-semibold m-auto">
-                <p>花枝3上市接近滿月，充滿暴風武器的環境、侵略性極強的大招、激烈碰撞的地圖前線、<span
-                        class="line-through">宛如大型公測的踩BUG遊戲</span>，對戰鬥感到疲倦的你，是否渴望新的力量？落難杯與斯普拉遁魚市場合作，共同推廣花枝真格競賽，期望能扶植各年幼海鮮，不再擔心被4X老害打屁屁，快來填寫報名表，成為人人喊抱的粗大腿吧！
-                </p>
-            </div>
+        <div class="max-w-[1200px] w-full md:px-4 mx-auto">
             <!-- content -->
-            <div class="w-full bg-dark p-8 
-            ">
-                <!-- 比賽章程 -->
-                <div id="theme" class="section-title">
-                    <span class="section-title_txt">
-                        比賽章程
-                    </span>
-                </div>
+            <div class="w-full bg-dark p-8">
                 <div>
                     <!-- 標題 -->
-                    <div class="rule-title">活動資訊</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>公開報名時間 ：10/7(五) 21:00 ~ 10/13(四) 24:00(GMT+8)</li>
-                            <li>募集人數：48/64/80人階段性擴增，若未滿48人報名則取消比賽，80人以後的報名列入備選。</li>
-                            <li>選秀時間：10/15、16(六、日)</li>
-                            <li>比賽時間：10/30(日) 19:45集合完畢，20:00準時開打。</li>
-                            <li><a href="https://discord.gg/VTjUQkB9uv">比賽Discord群組：<span
-                                        class="text-[#8be2fe] text-lg">斯普拉遁魚市場</span> </a></li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">參賽注意事項</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <p>請務必詳閱以下規則說明</p>
-                            <li>10/15、16(六、日)舉行選秀大會，詳情請看選秀辦法</li>
-                            <li class="rule-mark">本屆落難盃將有新人保障名額，3代加入的新朋友將享有最少25%的保證名額</li>
-                            <li>比賽相關活動詳情、即時狀況、聯絡等均於斯普拉遁魚市場 Discord 群組內進行，請參賽者務必加入</li>
-                            <li>如有改機、作弊、謊報RANK等破壞遊戲與比賽規則的行為，將無條件判定不具比賽資格，若有獲獎亦取消相關獎項，且終生不得參加魚市場相關比賽與活動</li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">選秀辦法</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>選秀時間<br>
-                                10/15(六)：09:00~22:00<br>
-                                10/16(日)：20:00~22:00</li>
-                            <li>據參賽人數取12~20名玩家作為隊長，挑選方式以 <span class="rule-mark"> 二代 X power </span>為準，由高至低排序，如遇同樣 Rank
-                                區間玩家則以亂數決定選秀順序，如遇同樣 Rank 區間玩家大於隊長需求數量，一樣會以亂數抽選決定隊長資格</li>
-                            <li>選秀第一日，第一輪選秀將由各隊長填寫選秀志願，將依隊長順位最低的隊伍優先排入選手</li>
-                            <li>選秀第二日公布第一輪選秀結果，第二輪選秀將由順位最高的隊長開始挑選(1~20) 最後再由最低順位隊長挑選(20~1)完成選秀流程</li>
-                            <li>如隊長選秀日未能如期參與（失聯15分鐘以上），將會取消隊長資格，由次高順位的玩家遞補</li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">對戰規則</div>
-                    <div class="text-[#e4e4e4]">
+                    <div class="flex-col md:flex-row flex justify-center md:items-stretch gap-4">
+                        <div class="bg-gray-400	p-4 rounded-2xl">
+                            <div class="font-medium text-xl py-2 px-8" id="theme">活動資訊</div>
+                            <div>
+                                <ol class="list-disc ml-8 mb-4">
+                                    <li>比賽時間：1/15(日) 19:30集合完畢，20:00準時開打。</li>
+                                    <li>募集隊伍數：12~24隊，若未滿12隊報名則取消比賽。</li>
+                                    <li class="line-through">隊伍募集時間 ：12/20(二)20:00-1/8(日) 20:00(GMT+8)，如提前收滿24隊則報名提早結束。
+                                    </li>
+                                    <li>參賽隊伍名單：本次參賽隊伍完整名單將於1/10(二)公告。</li>
+                                    <li><a
+                                            href="https://www.google.com/url?q=https%3A%2F%2Fdiscord.gg%2F2PkmJfuD&sa=D&sntz=1&usg=AOvVaw3RHi0Shc2RgjljD7cRC6kC">比賽Discord群組：<span
+                                                class="text-mainred text-lg">趕蟹季比賽伺服器</span> </a></li>
+                                    <li><a
+                                            href="https://docs.google.com/forms/d/e/1FAIpQLSe-gj8MjdfZo-9f60h6EODOY6qxy_zIgjK_OzLPlrWzjSysOA/viewform">繪圖贊助募集：<span
+                                                class="text-mainred text-lg">贊助表單</span> </a></li>
+                                </ol>
+                            </div>
+                        </div>
 
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <p>為確保比賽進程順暢，請遵守以下規範：</p>
-                            <li>初賽及決賽對戰地圖全地圖隨機抽選<br>
-                                <span class="rule-mark">初賽及決賽對戰場地皆以不重複為原則，請房主單場對戰結束後進行ban圖。</span>
-                            </li>
-                            <li>若無特殊需求，請由隊伍數字代號較小的一方負責開房。八強賽後若數字相同，則由字母較前的隊伍開房。</li>
-                            <li>每場對戰皆須在「所有隊伍」確認好前一階段對戰結果後再行開始，主辦會發布可開始進行對戰的訊息。</li>
-                            <li>請勿對選手或隊伍進行挑釁、誹謗中傷等行為。</li>
-                            <li>請保持充足睡眠規律生活不要睡過頭......(*´-ω-`人)</li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">10/30(日)比賽當日時程預定</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li><span class="rule-mark">19:45</span> 集合完畢，進行當日賽事進程說明、隊伍代表交換FC</li>
-                            <li><span class="rule-mark">19:55</span> 賽程表確認，隊伍代表交換FC完畢</li>
-                            <li><span class="rule-mark">20:00</span> 初賽準時開打（60~100分鐘）
-                                <ul class="list-disc ml-8">
-                                    <li>12組，每3組1區：每組打BO3取前二（R3x20=60分）</li>
-                                    <li>16組，每4組1區：每組打BO3取前二（R4x20=80分）</li>
-                                    <li>20組，每5組1區：每組打BO3取前二（R5x20=100分）</li>
-                                </ul>
-                            </li>
-                            <li><span class="rule-mark">21:40</span> 八強階段開打（BO5，30分鐘）</li>
-                            <li><span class="rule-mark">22:10</span> 準決賽開打 （BO5，30分鐘）</li>
-                            <li><span class="rule-mark">22:40</span> 冠亞賽開打 （BO5，30分鐘）</li>
-                            <li><span class="rule-mark">23:10</span> 比賽結束</li>
-                            <li>8強階段有超過10點的可能性，請自行判斷參賽時間是否能配合再行報名</li>
-                            <li>隊伍代表FC將在10/30(日)中午12:00前預先提供給各隊，可提前處理，但請配合於19:30-20:00間再次確認好友狀態</li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">玩家／隊伍名稱</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>請每隊各自想好自己的隊伍名稱，不然大會會指派一個很爛的給你^^</li>
-                            <li>請勿登記違反善良風俗的名稱</li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">私房創建</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>主辦宣佈可進行次回合對戰後，若10分鐘內負責開房的一方未開私房，則判定為另一方的勝利(2-0)</li>
-                            <li>房間開啟後，10分鐘內若有其中一方未全員進入私房，則判定為對手勝利(2-0)；若兩方成員皆未在10分鐘內進入房間，則在開房10分鐘後強制進行比賽</li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">對戰結果報告</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>由勝利方的隊伍代表於Discord內之「對戰結果報告」頻道進行回覆，並由主辦確認。</li>
-                            <li>報告方式請依照下方格式，以利分數統計進行：</li>
-                            <li>
-                                <div class="border-l-[2px] border-white pl-2 mt-2">
-                                    [隊伍A] 對 [隊伍B]<br>
-                                    [隊伍A] 勝<br>
-                                    [分數A] - [分數B]<br>
-                                    <br>
-                                    舉例：<br>
-                                    A3 對 D2<br>
-                                    A3 勝<br>
-                                    2 - 1
+                        <!-- caption -->
+                        <div
+                            class="flex gap-8 mx-auto justify-center items-center md:flex-col-reverse bg-white p-6 rounded-2xl">
+                            <img class="rounded-full w-40" src="./asset/cast.jpg" alt="">
+                            <div class="flex relative">
+                                <div
+                                    class="block md:hidden w-6 overflow-hidden inline-block absolute left-0 -translate-x-5 top-1/2 -translate-y-1/2">
+                                    <div
+                                        class=" h-8 bg-mainred rotate-45 transform origin-bottom-right md:group-hover:bg-[#fefab7]">
+                                    </div>
                                 </div>
-                            </li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">初賽順位決定方式</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>勝利數>初賽內雙隊伍直接對決結果>BO3賽中的敗場數</li>
-                        </ol>
-                    </div>
-                    <!-- 標題 -->
-                    <div class="rule-title">實況轉播</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <li>主辦方有可能會安插工作人員進入私房轉播，轉播場次將與對戰流程表一同公布，請知悉。</li>
-                            <li>官方轉播：(點擊頭像前往主播個人頻道)</li>
-                        </ol>
-                        <div class="w-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4 md:flex-row flex-wrap items-stretch gap-4 px-8 md:px-0">
-                            <div class="flex flex-col justify-center">
-                                <p class="text-center text-white text-lg border-b-[2px] border-white p-2">泰A組合</p>
-                                <div class="flex py-2 justify-center gap-2"><a
-                                        href="https://www.youtube.com/channel/UCWVqclEBrX4vnNbLmm_Gt1g" target="_blank"
-                                        class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
-                                        <div class="ytr-icon">
-                                            <img class="rounded-full" src="./asset/ytr_aa.jpg" alt="">
-                                        </div>
-                                        <span class="ytr-name">主播<br>AA</span>
-                                    </a>
-                                    <a href="https://www.youtube.com/c/Taylor_jbdxblgutaguta" target="_blank"
-                                        class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
-                                        <div class="ytr-icon">
-                                            <img class="rounded-full" src="./asset/ytr_taylor.png" alt="">
-                                        </div>
-                                        <span class="ytr-name">賽評<br>泰勒</span>
-                                    </a>
+                                <div
+                                    class="hidden md:block w-16 overflow-hidden inline-block absolute left-1/2 translate-y-8 bottom-0 -translate-x-1/3">
+                                    <div class="h-8 w-8 bg-mainred -rotate-45 transform origin-top-left ">
+                                    </div>
+                                </div>
+                                <div class="relative
+                                    md:group-hover:bg-[#fefab7] bg-mainred p-8 rounded-3xl
+                                    text-white text-[28px]">
+                                    <p>因為很想送螃蟹而生出來的比賽<br>而且螃蟹很壞</p>
+                                    <img class="w-8 -rotate-45 absolute bottom-4 right-4" src="./asset/kani_visual.png"
+                                        alt="">
                                 </div>
                             </div>
-                            <div class="flex flex-col justify-center">
-                                <p class="text-center text-white text-lg border-b-[2px] border-white p-2">肉塔組合</p>
-                                <div class="flex py-2 justify-center gap-2">
-                                    <a href="https://www.youtube.com/c/RONNKIEBrothers" target="_blank"
-                                        class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
-                                        <div class="ytr-icon">
-                                            <img class="rounded-full" src="./asset/ytr_ron.jpg" alt="">
-                                        </div>
-                                        <span class="ytr-name">主播<br>肉肉先森</span>
-                                    </a>
-                                    <a href="https://www.youtube.com/c/%E7%91%9E%E5%A1%94" target="_blank"
-                                        class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
-                                        <div class="ytr-icon">
-                                            <img class="rounded-full" src="./asset/ytr_rita.jpg" alt="">
-                                        </div>
-                                        <span class="ytr-name">賽評<br>瑞塔</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex flex-col justify-center">
-                                <p class="text-center text-white text-lg border-b-[2px] border-white p-2">Deja萬</p>
-                                <div class="flex py-2 justify-center gap-2">
-                                    <a href="https://www.youtube.com/c/SawyerCh" target="_blank"
-                                        class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
-                                        <div class="ytr-icon">
-                                            <img class="rounded-full" src="./asset/ytr_soya.jpg" alt="">
-                                        </div>
-                                        <span class="ytr-name">主播<br>索亞</span>
-                                    </a>
-                                    <a href="https://www.youtube.com/channel/UCD_Q__JVHofsidnNRmGmR-Q" target="_blank"
-                                        class="ytr-card flex flex-col items-cneter group bg-[#262626] rounded-xl p-4">
-                                        <div class="ytr-icon">
-                                            <img class="rounded-full" src="./asset/ytr_deja.jpg" alt="">
-                                        </div>
-                                        <span class="ytr-name">賽評<br>Deja Vu</span>
-                                    </a>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
 
+                    <!-- 標題 -->
+                    <div class="bg-white p-8 mt-20 rounded-2xl flex-col flex">
+                        <!-- 比賽章程 -->
+                        <div id="contest" class="h-8 p-8 scroll-mt-8 flex justify-center items-center items-center mb-8">
+                            <span class="font-semibold text-2xl py-3 px-6 text-white block bg-[#ffd04d]">
+                                賽事章程
+                            </span>
+                        </div>
+                        <div class="bg-gray-300 p-5 mb-4">
+                            <div class="font-medium text-xl py-2 px-8">參賽注意事項</div>
+                            <ol class="list-disc ml-8 mb-4">
+                                <li>請務必詳閱以下規則說明。</li>
+                                <li>初賽將以抽籤方式分組、多組同時進行；抽籤時間及分組細節將另行公布。</li>
+                                <li>比賽相關活動詳情、即時狀況、聯絡、報到等均於趕蟹季Discord群組內進行，請參賽隊伍代表務必加入。</li>
+                                <li>複賽可能超過22:00、四強賽可能超過23:00、冠亞軍賽可能超過24:00，請自行判斷是否能夠配合完整賽程再行報名。</li>
+                                <li>如對參賽注意事項及規則有疑慮，請於趕蟹季Discord群組確認後再行報名。</li>
+                            </ol>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="bg-mainred text-white overflow-hidden rounded-2xl mb-4">
+                            <div class="font-medium text-xl p-4 pl-8">特殊規則1－限定武器<br><span
+                                    class="text-base font-normal">趕蟹季就是要趕蟹！！</span></div>
+                            <div class="bg-white text-black border-4 border-mainred rounded-b-2xl p-4">
+                                <ol class="list-disc ml-8 mb-4">
+                                    <li>同隊4人於每場對戰必須有3人使用特殊武器為螃蟹坦克之武器、1人使用特殊武器為彈跳聲納之武器。</li>
+                                    <li>螃蟹坦克 任選x3：窄域標記槍、斯普拉機動槍、L3捲管槍、頂尖射擊槍(可重複選擇)</li>
+                                    <li>彈跳聲納 任選x1：楓葉射擊槍、遠距爆破槍、雙重清潔槍、桶裝旋轉槍、公升4K、4K準星槍</li>
+                                </ol>
+                                <img class="mx-auto w-4/5 w-[90%] md:w-4/5" src="./asset/contest.jpg" alt="">
+                            </div>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="bg-mainred text-white overflow-hidden rounded-2xl mb-4">
+                            <div class="font-medium text-xl p-4 pl-8">特殊規則2－蟹蟹賞<br><span
+                                    class="text-base font-normal">蟹蟹我的螃蟹！！！！！</span></div>
+                            <div class="bg-white text-black border-4 border-mainred rounded-b-2xl p-4">
+
+                                <ol class="list-disc ml-8 mb-4">
+                                    <li>繳件時間：1/17(二)12:00前繳交</li>
+                                    <li>繳件方式：將以google表單方式繳交，表單將於1/14(六)12:00開啟並另行通知各隊代表。</li>
+                                    <li>繳件內容：請繳交隊員4人皆有入鏡之圖片1張，畫面內需包含四位參賽選手。</li>
+                                    <li>繳交規格：請以NS直接出圖，可以NS內建功能進行編輯，勿以其他軟體修圖。</li>
+                                    <li>評斷標準：拍攝美感、故事性、畫面呈現、螃蟹度。</li>
+                                    <li>評選規則：將由六位評審依評斷標準分別給分，並附上各圖點評，排除1/15當日冠亞軍獲獎者後，以四項分別平均之合計得分最高者獲得。</li>
+                                    <li>結果公布時間：1/24(二)20:00公佈得獎者及點評內容。</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- 標題 -->
+                        <div class="rule-title">對戰場地</div>
+                        <div class="flex flex-col-reverse md:grid-cols-2 md:grid md:gap-4">
+                            <img src="./asset/field.jpg" alt="">
+                            <ol class="list-disc ml-8 mb-4">
+                                <p>為確保比賽進程順暢，請遵守以下規範：</p>
+                                <li>初賽及決賽對戰地圖限定由以下9張隨機抽選：<br>
+                                    <div class="grid grid-rows-3 gap-2 grid-flow-col my-4">
+                                        <div class="field">溫泉花大峽谷</div>
+                                        <div class="field">鰻鯰區</div>
+                                        <div class="field">煙管魚市場</div>
+                                        <div class="field">魚肉碎金屬</div>
+                                        <div class="field">海女美術大學</div>
+                                        <div class="field">鱘魚造船廠</div>
+                                        <div class="field">座頭購物中心</div>
+                                        <div class="field">醋飯海洋世界</div>
+                                        <div class="field">臭魚乾溫泉</div>
+                                    </div>
+                                    初賽及決賽對戰場地皆以不重複為原則，請房主於單場對戰結束後進行ban圖。
+                                </li>
+                                <li>若無特殊需求，請由隊伍數字代號較小的一方負責開房。四強賽後由主辦指定轉播人員開房。</li>
+                                <li>每場對戰皆須在「所有隊伍」確認前一階段對戰結果後，由主辦會發布可開始進行該輪對戰的通知再開始對戰。</li>
+                                <li>如時間許可，所有比賽結束後將由轉播人員對優勝隊伍進行訪談。</li>
+                                <li>請保持充足睡眠規律生活不要睡過頭......(*´-ω-`人)</li>
+                            </ol>
+                        </div>
+                        <!-- 標題 -->
+                        <span class="rule-title">賽制規劃</span>
+                        <div>
+                            <ol class="list-disc ml-8 mb-4">
+                                <li>初賽：規則為真格區域，三戰兩勝，循環賽制。報名結束後以抽籤方式分四組進行比賽，各組取前二進入複賽。</li>
+                                <li>複賽：規則為真格區域，五戰三勝，淘汰制。以初賽積分排序A1對B2、B1對A2、C1對D2、D1對C2，勝者進入四強賽。</li>
+                                <li>四強賽：複賽勝利方將重新抽選分組。規則為真格區域／蛤蜊（順序為蛤蜊→區域→蛤蜊→區域→蛤蜊）五戰三勝。淘汰制，勝者進行冠亞軍賽。</li>
+                                <li>冠亞軍賽：規則為真格區域／蛤蜊（順序為區域→蛤蜊→區域→蛤蜊→區域）五戰三勝。</li>
+                            </ol>
+                            <div><img class="w-4/5 mx-auto" src="./asset/schedule.jpg" alt=""></div>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="rule-title">1/15(日)比賽當日時程預定</div>
+                        <div class="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-8 items-center">
+                            <div class="border-[1px] border-mainred rounded-lg overflow-hidden">
+                                <div class="flex border-mainred border-[1px]">
+                                    <div class="schedule_time">19:30</div>
+                                    <div class="schedule_content">集合完畢，進行當日賽事進程說明、隊伍代表交換FC</div>
+                                </div>
+                                <div class="flex border-mainred border-[1px]">
+                                    <div class="schedule_time">19:45</div>
+                                    <div class="schedule_content">賽程表確認，隊伍代表交換FC完畢</div>
+                                </div>
+                                <div class="flex border-mainred border-[1px]">
+                                    <div class="schedule_time">20:00</div>
+                                    <div class="schedule_content">初賽準時開打</div>
+                                </div>
+                                <div class="flex border-mainred border-[1px]">
+                                    <div class="schedule_time">21:30</div>
+                                    <div class="schedule_content">複賽開打</div>
+                                </div>
+                                <div class="flex border-mainred border-[1px]">
+                                    <div class="schedule_time">22:10</div>
+                                    <div class="schedule_content">四強賽開打</div>
+                                </div>
+                                <div class="flex border-mainred border-[1px]">
+                                    <div class="schedule_time">22:50</div>
+                                    <div class="schedule_content">冠亞軍賽開打</div>
+                                </div>
+                                <div class="flex border-mainred border-[1px]">
+                                    <div class="schedule_time">23:30</div>
+                                    <div class="schedule_content">比賽結束</div>
+                                </div>
+
+                            </div>
+                            <div class="bg-gray-300 p-5">
+                                <p>※ 複賽可能超過22:00、四強賽可能超過23:00、冠亞軍賽可能超過24:00，請自行判斷是否能夠配合完整賽程再行報名。</p><br>
+                                <p>※ 隊伍代表FC將於1/14(六)中午12:00前預先提供給各隊代表，可提前處理，但請配合於19:30-19:45間「再次確認」好友狀態。</p>
+                            </div>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="rule-title">裝備限制</div>
+                        <ol class="list-disc ml-8 mb-4">
+                            <li>無特殊裝備限制。</li>
+                        </ol>
+                        <!-- 標題 -->
+                        <div class="rule-title">報名玩家／隊伍相關</div>
+                        <div>
+                            <ol class="list-disc ml-8 mb-4">
+                                <li>報名請以一支隊伍(4人)為一單位進行報名，請詳閱報名表單內容。</li>
+                                <li>所有隊伍成員／隊伍名稱於1/8(日) 20:00報名結束後，如有需要更改，請「一次性」於1/14(六)20:00前向主辦提出，過後將不再受理更換成員。</li>
+                                <li>若對戰內容經檢舉並查證有代打情況，則判定該隊伍取消資格。</li>
+                                <li>對戰私房除經知會主辦及雙方隊伍代表的觀戰／轉播人員外，禁止雙方隊伍選手以外的人進入，如有其餘人等進入並進行對戰，則判定為房主側1敗。</li>
+                                <li>本次比賽禁止重複報名複數隊伍。如有，則判定為雙邊隊伍皆取消資格。</li>
+                                <li>如有特殊情況請務必主動與主辦充分討論，若未通知將由主辦方聯絡隊伍代表，若聯絡次數超過三次未果，則該隊伍判定為取消資格。</li>
+                                <li>請保持良好遊戲習慣，勿對選手或隊伍進行挑釁、誹謗中傷等行為。</li>
+                                <li>為維護所有參賽人員權益及確保賽程完整性，恕不受理曾有改機、惡意使用BUG、作弊、冒名頂替、未事先通知即中途棄賽紀錄之人員報名。</li>
+                                <li>如有以上違反規則事項經驗者以其他帳號參賽之情事，經檢舉確認後主辦將公開名單並取消賽事資格。</li>
+                                <li>如賽事進行中有玩家產生以上違反規則情事產生，經檢舉確認後主辦將公開名單並取消賽事資格。</li>
+                                <li>如有主辦需抽籤的情況，將使用線上抽籤轉盤：https://wisdom-life.in/tool/wheel</li>
+                            </ol>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="rule-title">玩家／隊伍名稱</div>
+                        <div class="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-8">
+                            <img src="./asset/teamtag.jpg" alt="">
+                            <div>
+                                <ol class="list-disc ml-8 mb-4">
+                                    <li>請以報名時登記的名稱進行比賽。</li>
+                                    <li>請勿登記違反善良風俗的名稱。</li>
+                                    <li>對戰時，同隊玩家請於名稱前掛上同一隊伍名稱。</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="rule-title">私房創建</div>
+                        <div class="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-8">
+                            <div>
+                                <ol class="list-disc ml-8 mb-4">
+                                    <li>主辦宣佈可進行次回合對戰後，若5分鐘內負責開房的一方未開私房，則判定為另一方的勝利(2-0/3-0)。</li>
+                                    <li>房間開啟後，5分鐘內若另一方未全員進入私房，則判定為開房方的勝利(2-0/3-0)。</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="rule-title">對戰結果報告</div>
+                        <div class="flex flex-col gap-4 md:gap-8">
+                            <div>
+                                <ol class="list-disc ml-8 mb-4">
+                                    <li>由勝利方的隊伍代表於Discord內之「對戰結果報告」頻道進行回覆，並由主辦確認。</li>
+                                    <li>報告方式：範例「A1對A2，A1勝利，2-0」。</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="rule-title">初賽順位決定方式</div>
+                        <div class="flex flex-col gap-4 md:gap-8">
+                            <div>
+                                <ol class="list-disc ml-8 mb-4">
+                                    <li>勝利數 > 初賽內雙隊伍直接對決結果 > 單場對戰勝利數 > 單場對戰敗場數 > 參加申請順序。</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- 標題 -->
+                        <div class="rule-title">實況轉播</div>
+                        <div>
+                            <ol class="list-disc ml-8 mb-4">
+                                <li>官方轉播：(點擊頭像前往主播個人頻道)</li>
+                            </ol>
+                            <div
+                                class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
+                                <div
+                                    class="col-span-2 mx-auto w-auto grid grid-cols-1 md:flex grid-flow-row gap-4 md:flex-row flex-wrap items-stretch gap-4 px-8 md:px-0">
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-center text-lg border-b-[2px] p-2">カタパ屋のヨハンさん</p>
+                                        <div class="flex py-2 justify-center gap-2"><a
+                                                href="https://www.youtube.com/@Yohan_Splat" target="_blank"
+                                                class="ytr-card flex flex-col items-cneter group rounded-xl p-4">
+                                                <div class="ytr-icon">
+                                                    <img class="rounded-full" src="./asset/ytr_yohan.png" alt="">
+                                                </div>
+                                                <span class="ytr-name">轉播<br><span class="text-xl">有酣</span></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-center text-lg border-b-[2px] p-2">肉塔組合</p>
+                                        <div class="flex py-2 justify-center gap-2">
+                                            <a href="https://www.youtube.com/c/RONNKIEBrothers" target="_blank"
+                                                class="ytr-card flex flex-col items-cneter group rounded-xl p-4">
+                                                <div class="ytr-icon">
+                                                    <img class="rounded-full" src="./asset/ytr_ron.jpg" alt="">
+                                                </div>
+                                                <span class="ytr-name">主播<br><span class="text-xl">肉肉先森</span> </span>
+                                            </a>
+                                            <a href="https://www.youtube.com/c/%E7%91%9E%E5%A1%94" target="_blank"
+                                                class="ytr-card flex flex-col items-cneter group rounded-xl p-4">
+                                                <div class="ytr-icon">
+                                                    <img class="rounded-full" src="./asset/ytr_rita.jpg" alt="">
+                                                </div>
+                                                <span class="ytr-name">賽評<br><span class="text-xl">瑞塔</span></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-300 p-5">
+                                    <p class="">主辦方將安排直播人員進入私房轉播，詳細內容、轉播場次將與對戰流程表一同公布。</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- 標題 -->
-                    <div class="rule-title">問題回報</div>
-                    <div>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <p class="text-[#8be2fe] text-lg">Q.規則／場地／隊伍設定錯了，怎麼辦？</p>
-                            <li>若有選擇錯誤情形，請重開房，雙方以同樣地圖規則、同樣武器組成進行對戰。</li>
-                            <li>若房主方連續兩次選擇錯誤，則該場對戰結果判定為對方勝利。</li>
-                            <li>若有選擇錯誤情形發生，<span class="rule-mark">請該對戰中的任意玩家長按「左類比+右類比+L+R+ZL+ZR」六鍵，直接切斷對戰。</span></li>
-                        </ol>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <p class="text-[#8be2fe] text-lg">Q.斷線怎麼辦？</p>
-                            <li>對戰開始60秒內斷線：請重開房，雙方以同樣地圖規則、同樣武器組成、裝備進行對戰。</li>
-                            <li>對戰開始60秒內同一隊伍參賽者第二次斷線：請繼續進行對戰。</li>
-                            <li>對戰開始60秒後斷線：請繼續進行對戰。</li>
-                            <li>若為開房方斷線，且為必須重新開房的情況，請由另一方重新開房。<br>
-                                ＊ 60秒內：倒數時間顯示4:00(含)以前，如有疑慮請務必錄影。</li>
-                        </ol>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <p class="text-[#8be2fe] text-lg">Q.衝線怎麼辦？</p>
-                            <li>比賽開始前請務必提前確認個人網路狀況，如開房後有衝線情形請立刻於Discord內之「問題回報」頻道提出，由主辦方協助調整開房事宜。</li>
-                        </ol>
-                        <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                            <p class="text-[#8be2fe] text-lg">Q.如果有玩家使用惡意BUG怎麼辦？</p>
-                            <li><span class="rule-mark">本賽事嚴禁使用非正常手段進行遊戲</span></li>
-                            <li>如遇玩家使用系統漏洞進行遊戲，請長按拍照鍵錄影回報，經工作人員確認屬實，該隊將直接取消比賽資格。</li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- 賽制 -->
-                <div id="contest" class="section-title">
-                    <span class="section-title_txt">
-                        賽制
-                    </span>
-                </div>
-                <!-- 標題 -->
-                <div>
-                    <ol class="text-[#e4e4e4] list-disc ml-8 mb-4">
-                        <li>初賽：規則區域，三戰兩勝循環賽，分四大戰區進行比賽後各組取前2進入八強賽
-                            <ol class="list-disc ml-8">
-                                <li>12組/3組/區：每組打BO3取前二（R2x20=40分）</li>
-                                <li>16組/4組/區：每組打BO3取前二（R3x20=60分）</li>
-                                <li>20組/5組/區：每組打BO3取前二（R5x20=100分）</li>
+                    <div class="bg-white p-8 mt-20 rounded-2xl">
+                        <div id="award"
+                            class="font-medium text-xl py-2 px-8 mt-12 mb-10 text-white bg-gray-600 mx-auto inline-block rounded-sm self-center">
+                            問題回報</div>
+                        <div>
+                            <p class="text-lg pb-2 border-b-2 mb-4 border-black">規則／成員／武器選擇錯誤對應</p>
+                            <div
+                                class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
+                                <ol class="list-disc ml-8 mb-4 col-span-2 ">
+                                    <li>若有選擇錯誤情形，請重開房，雙方以同樣地圖規則、同樣武器組成及裝備進行對戰。</li>
+                                    <li>若房主方連續兩次選擇錯誤，則該場對戰結果判定為對方勝利。</li>
+                                    <li>若有選擇錯誤情形發生，請非房主方不要推動規則，由房主方將該場對戰迅速結束。</li>
+                                    <li>若非房主方推動規則，則該場對戰繼續進行，對戰結果列入計分。</li>
+                                    <li>若對戰開始後有任一方隊伍武器編成錯誤，請選擇錯誤方將該場對戰迅速結束，雙方以同樣地圖規則重新進行對戰。</li>
+                                    <li>若同一隊伍發生兩次武器編成錯誤狀況，則該隊伍判定為取消資格。</li>
+                                </ol>
+                                <div class="bg-gray-300 p-5">
+                                    <p class="whitespace-nowrap text-center">※ 「ZL+ZR+L+R+左類比+右類比」<br>六按鍵同時長按即可結束私房對戰。
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="text-lg pb-2 border-b-2 mb-4 border-black">lag處理方案</p>
+                            <div
+                                class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
+                                <ol class="list-disc ml-8 mb-4 col-span-2">
+                                    <p>對戰中如有對於lag產生影響對戰結果的疑問，請繼續對戰至該場對戰結束，結束後請依照以下內容於Discord內之「網路問題回報」頻道提出：</p>
+                                    <li>隊伍名稱／對方隊伍名稱+lag選手名稱。</li>
+                                    <li>受影響的影片片段，請以NS之30秒回錄功能上傳至個人SNS進行提報，勿使用對戰重播代碼提報，若無具體影片將無法受理。</li>
+                                    <li>具體文字說明。</li>
+                                    <p>主辦方將於十分鐘內進行裁決，判定結果如下：</p>
+                                    <li>影片內容不影響整體對戰結果之lag→比賽繼續進行。</li>
+                                    <li>嚴重至影響對戰結果之lag→重賽(雙方以同樣地圖規則、同樣武器組成、裝備進行對戰)。</li>
+                                    <li>若為雙方皆有提出lag情況，則私房解散改由另一方開房重賽。</li>
+                                </ol>
+                                <div class="bg-gray-300 p-5">
+                                    <p class="">※
+                                        網路對戰遊戲皆易受PING值影響產生不同程度lag情況，請各位參賽者於了解的情況下再行報名。<br>※
+                                        主辦對於lag情形將放寬標準、若有直接影響「規則勝負」之嚴重情況才會判定重賽。
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="text-lg pb-2 border-b-2 mb-4 border-black">衝線處理方案</p>
+                            <ol class="list-disc ml-8 mb-4">
+                                <li>比賽開始前請務必提前確認個人網路狀況，如開房後有衝線情形請立刻於Discord內之「網路問題回報」頻道提出，由主辦方協助調整開房事宜。</li>
                             </ol>
-                        </li>
-                        <li>複賽：(區域→塔樓→魚虎→蛤蜊→區域)，五戰三勝
-                            <!-- <ol class="list-disc ml-8">
-                                <li>48人/12組/4區/新手保底12人</li>
-                                <li>64人/16組/4區/新手保底16人</li>
-                                <li>80人/20組/4區/新手保底20人</li>
-                            </ol> -->
-                        </li>
-                        <li>準決賽：(區域→塔樓→魚虎→蛤蜊→區域)，五戰三勝（30分）</li>
-                        <li>冠亞賽：(區域→塔樓→魚虎→蛤蜊→區域)，五戰三勝（30分）</li>
-                        <li>總共 210 分（3.5 小時)</li>
-                    </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- 大會獎品 -->
             <!-- title -->
             <div id="award" class="section-title">
                 <span class="section-title_txt">
-                    大會獎品
+                    獎項內容
                 </span>
             </div>
-            <p class="text-white flex justify-center mb-12">*得獎者以直播抽獎結果為主</p>
-            <div class="w-full grid grid-cols-1 lg:grid-cols-2 grid-flow-row gap-4 md:flex-row flex-wrap items-stretch gap-4 px-8 md:px-0">
+            <p class="flex justify-center mb-12 text-white">*得獎者以直播抽獎結果為主</p>
+            <div
+                class="w-full grid grid-cols-1 lg:grid-cols-2 grid-flow-row gap-4 md:flex-row flex-wrap items-stretch gap-4 px-8 md:px-0">
                 <div v-for="item in list" class=" flex flex-col w-full">
                     <!-- title -->
                     <div class="w-full h-16
                     flex flex-row justify-between items-center overflow-hidden
-                    bg-gradient-to-r from-[#f7b5d1] via-[#ae7eec] to-[#7dc0eb]
+                    bg-mainred
                     bg-cover px-2
                     ">
                         <div class="flex flex-row h-full items-center gap-3">
                             <div class="w-[4.5rem] h-[70%] rounded-full p-4 ml-2
-                                bg-[#1d1d1d]
-                                text-white text-center flex justify-center items-center">{{item.unit}}</div>
+                                bg-neutral
+                                -800 text-white
+                                text-center flex justify-center items-center">{{item.unit}}</div>
                             <div class="flex flex-col">
-                                <div class="text-sm">恭喜 {{item.luckysquid}}</div>
-                                <div class="text-md font-bold">「{{item.title}}」</div>
+                                <div class="text-sm">{{item.luckysquid}}</div>
+                                <div class="text-md font-bold text-white">「{{item.title}}」</div>
                             </div>
                         </div>
                         <!-- <div class="px-6 bg-black h-full flex justify-center items-center">
@@ -327,18 +410,18 @@
                         </div> -->
                     </div>
                     <!-- 獎品內容 -->
-                    <div class="flex flex-col items-center bg-[#1D1D1D] px-6 py-2 shadow-2xl">
+                    <div class="flex flex-col items-center bg-[#fff] px-6 py-2 shadow-2xl">
                         <!-- 贊助商 -->
-                        <div class="text-center px-4 py-1 mt-2 text-[#f9b0ff] border-[#f9b0ff]">{{item.sponsor}}
+                        <div class="text-center px-4 py-1 mt-2 text-mainred border-mainred">{{item.sponsor}}
                         </div>
                         <div
-                            class="flex flex-col md:flex-row items-center md:items-stretch w-full gap-2 py-4 border-t-[0.5px] border-[#FD85FF] px-8">
+                            class="flex flex-col md:flex-row items-center md:items-stretch w-full gap-2 py-4 border-t-[0.5px] border-mainred px-8">
                             <!-- 圖片 -->
                             <div class="md:w-full lg:w-[40%] overflow-hidden">
                                 <img class=" rounded-2xl" :src='item.image' alt="">
                             </div>
                             <!-- 內容 -->
-                            <div class="w-full md:w-[60%] flex flex-col px-2 text-white relative h-auto md:h-auto">
+                            <div class="w-full md:w-[60%] flex flex-col px-2 text-gray-600 relative h-auto md:h-auto">
                                 <div class="">
                                     得獎條件：<br><span class=""></span>
                                     {{item.rule}}
@@ -357,7 +440,7 @@
                     工作人員
                 </span>
             </div>
-            <p class="text-[#e4e4e4] text-center mb-12">*點擊可前往個人資料頁面</p>
+            <p class="text-center mb-12 text-white">*點擊可前往個人資料頁面</p>
             <div class="flex flex-wrap gap-6 px-8">
                 <a v-for="item in staff" class="lg:w-[48%] flex flex-row w-full gap-8 group" :href="item.url"
                     target="_blank">
@@ -394,14 +477,15 @@
     <!-- nav -->
     <!-- <div class="fixed blur-md h-14 w-full bottom-0
      bg-gradient-to-r from-violet-500 to-fuchsia-500"></div> -->
-    <div class="hidden md:flex fixed justify-center items-center backdrop-blur-xl 
-    bottom-0 w-full h-14">
-        <ul class="flex justify-between items-center w-[60%] gap-6">
+    <div class="hidden md:flex fixed justify-center items-center bg-mainyellow 
+    top-0 right-0">
+        <ul class="flex items-center gap-6 mx-8 my-4 w-[40rem]">
             <li class="flex justify-between items-center w-[100%]">
                 <ul class="flex flex-center items-center justify-between w-full">
-                    <li class="nav-btn"><a href="#theme">比賽章程</a></li>
-                    <li class="nav-btn"><a href="#contest">賽制</a></li>
-                    <li class="nav-btn"><a href="#award">大會獎品</a></li>
+                    <li class="nav-btn"><a href="#theme">活動資訊</a></li>
+                    <li class="nav-btn"><a href="#contest">賽事章程</a></li>
+                    <li class="nav-btn"><a href="#award">問題回報</a></li>
+                    <li class="nav-btn"><a href="#staff">獎項內容</a></li>
                     <li class="nav-btn"><a href="#staff">工作人員</a></li>
                     <!-- <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform"
                             target="_blank" class="nav-btn_spec">我要報名</a></li> -->
@@ -447,203 +531,27 @@
                 list: [
                     {
                         unit: '1隊',
-                        title: '冠軍賞',
-                        image: './asset/prize_bm.jpg',
-                        sponsor: '布喵ᔦꙬᔨ熱情贊助 ',
-                        rule: '落難杯3冠軍隊伍',
-                        luckysquid: '魷魚朋友愛好者',
+                        title: '冠軍賞 (松葉蟹腳肉*4盒+四人隊圖)',
+                        image: './asset/prize_kani.jpeg',
+                        sponsor: '趕蟹祭超級大獎',
+                        rule: '趕蟹祭冠軍隊伍',
+                        luckysquid: '',
                     },
                     {
                         unit: '1隊',
-                        title: '亞軍賞',
-                        image: './asset/prize_polero.jpg',
-                        sponsor: 'Polero熱情贊助 ',
-                        rule: '落難杯3亞軍隊伍',
-                        luckysquid: '神di謀殺物語 vol.4',
-                    },
-                    {
-                        unit: '1位',
-                        title: '控場我來賞',
-                        image: './asset/prize_omurice.jpg',
-                        sponsor: 'Omurice炸黑輪熱情贊助 ',
-                        rule: '任一場次獲得真格區域前線把控 No.1的金牌即可抽獎',
-                        luckysquid: 'りょうすけ',
-                    },
-                    {
-                        unit: '1位',
-                        title: '教練紅牌賞',
-                        image: './asset/prize_feng.jpg',
-                        sponsor: '粉粿熱情贊助 ',
-                        rule: '由所有參賽者票選最用心、最喜歡的教練獲獎',
-                        luckysquid: '音無',
-                    },
-                    {
-                        unit: '2位',
-                        title: '進步最多賞',
-                        image: './asset/prize_pupu.jpg',
-                        sponsor: '噗噗噗噗噗噗噗熱情贊助 (繪師: Naum)',
-                        rule: '每個隊長提供一名該隊裡進步幅度最大的隊員，從20個人裡抽兩個獲獎',
-                        luckysquid: 'sola / PoiLee672',
-                    },
-                    {
-                        unit: '1位',
-                        title: '手刀賞',
-                        image: './asset/prize_nishi.jpg',
-                        sponsor: 'NISHI熱情贊助 ',
-                        rule: '第一個成功報名的玩家',
-                        luckysquid: '辣啦',
-                    },
-                    {
-                        unit: '1位',
-                        title: '螺慢地剋賞',
-                        image: './asset/prize_turtle.jpg',
-                        sponsor: '烏龜熱情贊助 ',
-                        rule: '比賽期間拿鸚鵡螺且戰績有出現2跟7即可獲獎，如多人則擁有較多7的人獲獎',
-                        luckysquid: '佐佐',
-                    },
-                    {
-                        unit: '3位',
-                        title: '如果通通沒有賞',
-                        image: './asset/prize_lami.jpg',
-                        sponsor: '樂米得海味熱炒店熱情贊助 ',
-                        rule: '未獲得任何獎項的人即可參與抽獎',
-                        luckysquid: 'MuG〆[Rios]',
-                    },
-                    {
-                        unit: '1位',
-                        title: '最佳輔助獎',
-                        image: './asset/prize_empty.jpg',
-                        sponsor: '連雅熱情贊助 ',
-                        rule: '任一場贏得比賽且獲得三個銀牌即可抽獎',
-                        luckysquid: '辣啦',
-                    },
-                    {
-                        unit: '1位',
-                        title: '名牌賞',
-                        image: './asset/prize_chicken.jpg',
-                        sponsor: '雞腿 熱情贊助 ',
-                        rule: '贊助商最鍾意的名牌獲獎',
-                        luckysquid: '樂米得海味熱炒店',
-                    },
-                    {
-                        unit: '1位',
-                        title: '行動B控賞',
-                        image: './asset/prize_shiro.jpg',
-                        sponsor: 'シロ熱情贊助 (繪師:唯Yui)',
-                        rule: '任一場次獲得同伴跳躍目標No.1 的金牌即可抽獎',
-                        luckysquid: 'D-Tī',
-                    },
-                    {
-                        unit: '1位',
-                        title: 'SSR卡包賞',
-                        image: './asset/prize_lala.jpg',
-                        sponsor: '辣啦熱情贊助 ',
-                        rule: '比賽期間勝利姿勢選用占地鬥士之姿的玩家即可抽獎',
-                        luckysquid: '阿包',
-                    },
-                    {
-                        unit: '1位',
-                        title: '差點慢了賞',
-                        image: './asset/prize_cz.jpg',
-                        sponsor: '雲畝熱情贊助',
-                        rule: '最後一位成功報名選手的玩家即可獲獎',
-                        luckysquid: 'towlee',
-                    },
-                    {
-                        unit: '1位',
-                        title: '金牌我發賞',
-                        image: './asset/prize_loose.jpg',
-                        sponsor: '白松熱情贊助 ',
-                        rule: '任一場次獲得刷新最佳計數（金牌） 即可抽獎',
-                        luckysquid: 'LWY奈奈',
-                    },
-                    {
-                        unit: '1位',
-                        title: '你今天52了嗎賞',
-                        image: './asset/prize_aa.jpg',
-                        sponsor: 'AA熱情贊助 (繪師:琉璃紺)',
-                        rule: '1.拿52且單局剛好殺五個人且死兩次 2.備案: 若條件1無人達成，則當局只要擊殺與死亡分別為5或2(可互換)，即可參與抽獎',
-                        luckysquid: '你要喝飲料嗎',
+                        title: '亞軍賞 (四人隊圖)',
+                        image: './asset/prize_default.jpg',
+                        sponsor: '趕蟹祭主辦',
+                        rule: '趕蟹祭亞軍隊伍',
+                        luckysquid: '',
                     },
                     {
                         unit: '1隊',
-                        title: '超可愛賞',
-                        image: './asset/prize_eru1.jpg',
-                        sponsor: 'エル熱情贊助 ',
-                        rule: '隊伍全員髮型、服裝(帽子、衣服、鞋子)其中之一統一即可獲獎',
-                        luckysquid: '雨天就是要吃四公升壽司飯糰',
-                    },
-                    {
-                        unit: '1隊',
-                        title: '@演算法賞',
-                        image: './asset/prize_madtaco.jpg',
-                        sponsor: 'MadTaco熱情贊助 ',
-                        rule: '大會最喜歡的隊伍名可獲獎',
-                        luckysquid: '炸襪滷豆焦啦焦啦焦啦',
-                    },
-                    {
-                        unit: '1隊',
-                        title: '努力不懈賞',
-                        image: './asset/prize_vanto.jpg',
-                        sponsor: 'Vanto熱情贊助 ',
-                        rule: '初賽積分最低的隊伍可抽獎',
-                        luckysquid: '悠Miss米紅茶一號店',
-                    },
-                    {
-                        unit: '1位',
-                        title: '超新星獎',
-                        image: './asset/prize_eru2.jpg',
-                        sponsor: 'エル熱情贊助 ',
-                        rule: '比賽期間最引人注目、表現最優異的三代新人',
-                        luckysquid: 'JSON',
-                    },
-                    {
-                        unit: '3位',
-                        title: '新人早鳥賞',
-                        image: './asset/prize_dada.jpg',
-                        sponsor: 'dada熱情贊助 ',
-                        rule: '最早報名的前三個三代玩家',
-                        luckysquid: '國鈞',
-                    },
-                    {
-                        unit: '2位',
-                        title: '鍋蓋魚賞',
-                        image: './asset/prize_rios.jpg',
-                        sponsor: 'Rios熱情贊助 ',
-                        rule: '比賽期間髮型為秀托頭(齊瀏海)者即可參加抽獎',
-                        luckysquid: '阿澐 / りょうすけ',
-                    },
-                    {
-                        unit: '1位',
-                        title: '贊助商最大～賞',
-                        image: './asset/prize_taylor.jpg',
-                        sponsor: 'Taylor熱情贊助 ',
-                        rule: '從贊助商裡抽出一位，限港台玩家',
-                        luckysquid: '布喵',
-                    },
-                    {
-                        unit: '1位',
-                        title: '無脊椎相談賞',
-                        image: './asset/prize_invert.jpg',
-                        sponsor: '無脊椎相談所熱情贊助 ',
-                        rule: '從選手及贊助商中抽出一位',
-                        luckysquid: 'N3phthys',
-                    },
-                    {
-                        unit: '1隊',
-                        title: '整場我最塗賞',
-                        image: './asset/prize_dora.jpg',
-                        sponsor: '朵拉熱情贊助 ',
-                        rule: '所有隊員該場P數加起來最大的得獎（擊殺數前面一欄 4個隊員的p數加起來）',
-                        luckysquid: '爆炸頭棉花糖遊戲還好',
-                    },
-                    {
-                        unit: '2隊',
-                        title: '德州撲克賞',
-                        image: './asset/prize_alpha.jpg',
-                        sponsor: '阿嚕法熱情贊助 ',
-                        rule: '1.全隊戰績(擊殺、助殺、死亡)符合鐵支(例如6666)，且加總分數最高者可獲獎 2.全隊戰績(擊殺、助殺、死亡)符合兩個對子(例如6622)，且加總分數最高者可獲獎 3.全隊戰績(擊殺、助殺、死亡)符合順子(例如9876)，且加總分數最"低"者可獲獎',
-                        luckysquid: '爆炸頭棉花糖遊戲還好 / 為什麼我們四個不能一起做瘋狗',
+                        title: '蟹蟹賞 (四人隊圖)',
+                        image: './asset/prize_default.jpg',
+                        sponsor: '趕蟹祭主辦',
+                        rule: '蟹蟹賞得獎隊伍',
+                        luckysquid: '',
                     },
                 ],
                 staff: [
@@ -652,24 +560,6 @@
                         image: './asset/staff_syuto.jpg',
                         name: '秀托',
                         quote: '芋報從速'
-                    },
-                    {
-                        url: 'https://www.youtube.com/c/Taylor_jbdxblgutaguta',
-                        image: './asset/ytr_taylor.png',
-                        name: '泰勒',
-                        quote: '慢了'
-                    },
-                    {
-                        url: 'https://lit.link/en/ChounoRin',
-                        image: './asset/staff_sana.jpg',
-                        name: '那那',
-                        quote: '有事請聯絡主辦'
-                    },
-                    {
-                        url: 'https://www.youtube.com/channel/UCWVqclEBrX4vnNbLmm_Gt1g',
-                        image: './asset/ytr_aa.jpg',
-                        name: 'AA',
-                        quote: '我不是在委託，就是在前往委託的路上'
                     },
                     {
                         url: 'https://twitter.com/kawaiilanpa',
@@ -682,18 +572,6 @@
                         image: './asset/staff_fukahire.jpg',
                         name: '魚翅',
                         quote: '偷懶打真格都沒在寫網頁'
-                    },
-                    {
-                        url: 'https://twitter.com/icelin1717',
-                        image: './asset/staff_ice.png',
-                        name: '冰塊',
-                        quote: '獸人'
-                    },
-                    {
-                        url: 'https://twitter.com/dada56746',
-                        image: './asset/staff_dada.png',
-                        name: '達達',
-                        quote: '占地杯籌畫中 (X)'
                     },
                 ],
             }

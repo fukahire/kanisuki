@@ -4,30 +4,40 @@
 
 @layer components {
     .rule-title {
-        @apply font-medium text-xl text-[#e4e4e4] border-b-2 text-[#e4e4e4] p-2 mb-4;
+        @apply font-medium text-xl py-2 px-8 mt-12 mb-4 text-white bg-gray-600 mx-auto inline-block rounded-sm self-center;
     }
     .rule-mark {
         @apply font-medium text-[#f8b1ff];
     }
     .nav-btn {
-        @apply text-white text-lg md:hover:text-[#9be2ff];
+        @apply text-black text-lg font-semibold md:hover:opacity-50;
     }
     .nav-btn_spec {
         @apply text-[#f8b1ff] text-lg md:hover:text-[#9be2ff];
     }
+    /* 大標 */
     .section-title {
-        @apply h-8 p-4 scroll-mt-8 flex justify-center items-center items-center mb-12 mt-24;
+        @apply h-8 p-8 scroll-mt-8 flex justify-center items-center items-center mb-12 mt-24 bg-[#e60012];
     }
     .section-title_txt {
-        @apply font-semibold text-[#e3e3e3] text-2xl py-3 px-6 border-[#e3e3e3] border-y-2;
+        @apply font-semibold text-2xl py-3 px-6 text-white;
     }
     .ytr-icon {
-        @apply rounded-full overflow-hidden w-28 bg-[url('../asset/ytr_bg.jpg')] p-2 md:group-hover:rotate-45 ease-in duration-150;
+        @apply rounded-full overflow-hidden w-28 p-2 md:group-hover:rotate-45 ease-in duration-150;
     }
     .ytr-name {
-        @apply text-white text-center text-lg font-bold text-[#F8b1ff] md:group-hover:text-[#9be2ff];
+        @apply text-white text-center text-base font-bold text-gray-700 md:group-hover:opacity-50;
     }
     .navmobile-btn {
         @apply text-black font-bold leading-normal bg-cover bg-[url('../asset/ytr_bg.jpg')] w-[70px] h-[70px] text-center rounded-[70px] justify-center items-center;
+    }
+    .field {
+        @apply bg-mainred rounded-lg p-2 flex justify-center items-center text-white font-medium;
+    }
+    .schedule_time {
+        @apply text-white bg-mainred py-2 px-4;
+    }
+    .schedule_content {
+        @apply py-2 px-4;
     }
 }
