@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="./asset/kani_favicon.ico"/>
+    <link rel="icon" href="./asset/kani_favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
                     <!-- 標題 -->
                     <div class="flex-col md:flex-row flex justify-center md:items-stretch gap-4">
                         <div class="bg-gray-400	p-4 rounded-2xl">
-                            <div class="font-medium text-xl py-2 px-8" id="theme">活動資訊</div>
+                            <div class="font-medium text-xl py-2 px-8 scroll-mt-8" id="theme">活動資訊</div>
                             <div>
                                 <ol class="list-disc ml-8 mb-4">
                                     <li>比賽時間：1/15(日) 19:30集合完畢，20:00準時開打。</li>
@@ -91,7 +91,8 @@
                     <!-- 標題 -->
                     <div class="bg-white p-8 mt-20 rounded-2xl flex-col flex">
                         <!-- 比賽章程 -->
-                        <div id="contest" class="h-8 p-8 scroll-mt-8 flex justify-center items-center items-center mb-8">
+                        <div id="contest"
+                            class="h-8 p-8 scroll-mt-8 flex justify-center items-center items-center mb-8">
                             <span class="font-semibold text-2xl py-3 px-6 text-white block bg-[#ffd04d]">
                                 賽事章程
                             </span>
@@ -282,8 +283,7 @@
                             <ol class="list-disc ml-8 mb-4">
                                 <li>官方轉播：(點擊頭像前往主播個人頻道)</li>
                             </ol>
-                            <div
-                                class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
+                            <div class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
                                 <div
                                     class="col-span-2 mx-auto w-auto grid grid-cols-1 md:flex grid-flow-row gap-4 md:flex-row flex-wrap items-stretch gap-4 px-8 md:px-0">
                                     <div class="flex flex-col justify-center">
@@ -326,13 +326,12 @@
                     </div>
                     <!-- 標題 -->
                     <div class="bg-white p-8 mt-20 rounded-2xl">
-                        <div id="award"
-                            class="font-medium text-xl py-2 px-8 mt-12 mb-10 text-white bg-gray-600 mx-auto inline-block rounded-sm self-center">
+                        <div id="question"
+                            class="font-medium text-xl py-2 px-8 mt-12 mb-10 text-white bg-gray-600 mx-auto inline-block rounded-sm self-center scroll-mt-8">
                             問題回報</div>
                         <div>
                             <p class="text-lg pb-2 border-b-2 mb-4 border-black">規則／成員／武器選擇錯誤對應</p>
-                            <div
-                                class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
+                            <div class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
                                 <ol class="list-disc ml-8 mb-4 col-span-2 ">
                                     <li>若有選擇錯誤情形，請重開房，雙方以同樣地圖規則、同樣武器組成及裝備進行對戰。</li>
                                     <li>若房主方連續兩次選擇錯誤，則該場對戰結果判定為對方勝利。</li>
@@ -347,8 +346,7 @@
                                 </div>
                             </div>
                             <p class="text-lg pb-2 border-b-2 mb-4 border-black">lag處理方案</p>
-                            <div
-                                class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
+                            <div class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense">
                                 <ol class="list-disc ml-8 mb-4 col-span-2">
                                     <p>對戰中如有對於lag產生影響對戰結果的疑問，請繼續對戰至該場對戰結束，結束後請依照以下內容於Discord內之「網路問題回報」頻道提出：</p>
                                     <li>隊伍名稱／對方隊伍名稱+lag選手名稱。</li>
@@ -376,7 +374,7 @@
             </div>
             <!-- 大會獎品 -->
             <!-- title -->
-            <div id="award" class="section-title">
+            <div id="award" class="section-title scroll-mt-8">
                 <span class="section-title_txt">
                     獎項內容
                 </span>
@@ -411,8 +409,7 @@
                     <!-- 獎品內容 -->
                     <div class="flex flex-col items-center bg-[#fff] px-6 py-2 shadow-2xl">
                         <!-- 贊助商 -->
-                        <div class="text-center px-4 py-1 mt-2 text-mainred border-mainred">{{item.sponsor}}
-                        </div>
+                        <div class="text-center px-4 py-1 mt-2 text-mainred border-mainred">{{item.sponsor}}</div>
                         <div
                             class="flex flex-col md:flex-row items-center md:items-stretch w-full gap-2 py-4 border-t-[0.5px] border-mainred px-8">
                             <!-- 圖片 -->
@@ -432,41 +429,68 @@
                         </div>
                     </div>
                 </div>
+                <div class="bg-gray-300 p-5">
+                    <ul class="list-disc ml-8 mb-4 col-span-2">
+                        <li>四人圖尺寸皆為w1500px*h600px。</li>
+                        <li>圖片可公開並僅限於獲獎者本人於網路使用，張貼請註明作者。</li>
+                        <li>請勿進行任何修改／重製／印刷，並禁止使用於營利活動。</li>
+                        <li>得獎者請於1/17(二)12:00前提供四位隊員之設定圖給主辦。</li>
+                        <p>※ 設定圖請完整提供膚色、觸手顏色(髮色)、眼睛顏色、服裝、武器之清晰示意圖。</p>
+                    </ul>
+                </div>
             </div>
             <!-- 工作人員 -->
-            <div id="staff" class="section-title">
+            <div id="staff" class="section-title scroll-mt-8">
                 <span class="section-title_txt">
                     工作人員
                 </span>
             </div>
-            <p class="text-center mb-12 text-white">*點擊可前往個人資料頁面</p>
             <div class="flex flex-wrap gap-6 px-8">
-                <a v-for="item in staff" class="lg:w-[48%] flex flex-row w-full gap-8 group" :href="item.url"
-                    target="_blank">
+                <a class="lg:w-[48%] flex flex-row w-full gap-8 group">
                     <div class="flex flex-col justify-center items-center relative">
                         <div class="ytr-icon">
+                            <img src="./asset/cast.jpg" class="rounded-full" alt="">
+                        </div>
+                        <p
+                            class="bg-mainred px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-4 ring-mainred text-white">
+                            欸嚕</p>
+                    </div>
+                </a>
+                <a v-for="item in staff" class=" flex flex-row gap-4 group">
+                    <div class="flex flex-col justify-center items-center relative">
+                        <div class="rounded-full overflow-hidden w-28 p-2 ease-in duration-150">
                             <img :src="item.image" class="rounded-full" alt="">
                         </div>
                         <p
-                            class="bg-[#F8b1ff] px-2 py-0.5 rounded-lg font-extrabold absolute bottom-0 right-0 rotate-6 ring-4 ring-[#4520ea] text-[#4520ea]">
+                            class="bg-mainred px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-2 ring-mainred text-white">
                             {{item.name}}</p>
                     </div>
-                    <div class="flex items-center justify-center gap-4 relative drop-shadow-md">
-                        <div
-                            class=" w-3 overflow-hidden inline-block absolute left-0 -translate-x-5 top-1/2 -translate-y-1/2">
-                            <div
-                                class=" h-4 bg-[#9be2ff] rotate-45 transform origin-bottom-right md:group-hover:bg-[#fefab7]">
-                            </div>
-                        </div>
-                        <div class="md:group-hover:bg-[#fefab7] bg-[#9be2ff] p-4 w-full rounded-xl">
-                            <p>{{item.quote}}</p>
-                        </div>
-                    </div>
                 </a>
+                <div class="flex">
+                    <a class="flex flex-row gap-8 group" target="_blank" href="https://sites.google.com/view/crayfish0718/" target="_blank">
+                        <div class="flex flex-col justify-center items-center relative">
+                            <div class="ytr-icon">
+                                <img src="./asset/contest_crayfish.jpg" class="rounded-full" alt="">
+                            </div>
+                            <p
+                                class=" px-2 py-0.5 rounded-lg font-bold text-white">
+                                小龍蝦盃</p>
+                        </div>
+                    </a>
+                    <a class="flex flex-row gap-8 group" target="_blank" href="https://sites.google.com/view/draftyababi/" translate="">
+                        <div class="flex flex-col justify-center items-center relative">
+                            <div class="ytr-icon">
+                                <img src="./asset/contest_yababi.jpg" class="rounded-full" alt="">
+                            </div>
+                            <p
+                                class="whitespace-nowrap px-2 py-0.5 rounded-lg font-bold text-white">Draft YaBaBi</p>
+                        </div>
+                    </a>
+                    
+                </div>
             </div>
             <br><br><br><br><br><br><br><br><br><br>
             <!-- <div class="border-t-2 border-white text-center p-4 text-white my-8">
-                斯普拉遁魚市場
                 <br><br><br><br><br>
             </div> -->
         </div>
@@ -483,14 +507,15 @@
                 <ul class="flex flex-center items-center justify-between w-full">
                     <li class="nav-btn"><a href="#theme">活動資訊</a></li>
                     <li class="nav-btn"><a href="#contest">賽事章程</a></li>
-                    <li class="nav-btn"><a href="#award">問題回報</a></li>
-                    <li class="nav-btn"><a href="#staff">獎項內容</a></li>
+                    <li class="nav-btn"><a href="#question">問題回報</a></li>
+                    <li class="nav-btn"><a href="#award">獎項內容</a></li>
                     <li class="nav-btn"><a href="#staff">工作人員</a></li>
                     <!-- <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform"
                             target="_blank" class="nav-btn_spec">我要報名</a></li> -->
                     <!-- <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
                             target="_blank" class="nav-btn_spec">我想贊助</a></li> -->
-                    <li><a href="https://discord.gg/VTjUQkB9uv" target="_blank" class="nav-btn_spec">聯絡我們</a></li>
+                    <li><a href="https://www.google.com/url?q=https%3A%2F%2Fdiscord.gg%2F2PkmJfuD&sa=D&sntz=1&usg=AOvVaw3RHi0Shc2RgjljD7cRC6kC"
+                            target="_blank" class="nav-btn_spec">聯絡我們</a></li>
                 </ul>
             </li>
         </ul>
@@ -548,29 +573,31 @@
                         unit: '1隊',
                         title: '蟹蟹賞 (四人隊圖)',
                         image: './asset/prize_default.jpg',
-                        sponsor: '趕蟹祭主辦',
+                        sponsor: '趕蟹季主辦',
                         rule: '蟹蟹賞得獎隊伍',
                         luckysquid: '',
                     },
                 ],
                 staff: [
                     {
-                        url: 'https://twitter.com/Syu_Tao',
+                        url: '#',
                         image: './asset/staff_syuto.jpg',
                         name: '秀托',
-                        quote: '芋報從速'
                     },
                     {
-                        url: 'https://twitter.com/kawaiilanpa',
+                        url: '#',
+                        image: './asset/staff_nana.jpg',
+                        name: '拿拿',
+                    },
+                    {
+                        url: '#',
                         image: './asset/staff_apa.jpg',
                         name: 'APA',
-                        quote: '魚翅超會寫網頁，謝謝你，魚翅超人'
                     },
                     {
-                        url: 'https://twitter.com/annaki40734081',
+                        url: '#',
                         image: './asset/staff_fukahire.jpg',
                         name: '魚翅',
-                        quote: '偷懶打真格都沒在寫網頁'
                     },
                 ],
             }

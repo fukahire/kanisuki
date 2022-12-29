@@ -585,14 +585,15 @@ video {
 .nav-btn_spec {
   font-size: 1.125rem;
   line-height: 1.75rem;
+  font-weight: 600;
   --tw-text-opacity: 1;
-  color: rgb(248 177 255 / var(--tw-text-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px) {
   .nav-btn_spec:hover {
     --tw-text-opacity: 1;
-    color: rgb(155 226 255 / var(--tw-text-opacity));
+    color: rgb(230 0 18 / var(--tw-text-opacity));
   }
 }
 
@@ -829,6 +830,18 @@ video {
   margin-left: 1rem;
 }
 
+.-ml-8 {
+  margin-left: -2rem;
+}
+
+.-ml-4 {
+  margin-left: -1rem;
+}
+
+.-ml-6 {
+  margin-left: -1.5rem;
+}
+
 .block {
   display: block;
 }
@@ -931,6 +944,10 @@ video {
 
 .w-\[100\%\] {
   width: 100%;
+}
+
+.w-28 {
+  width: 7rem;
 }
 
 .max-w-\[1200px\] {
@@ -1183,6 +1200,11 @@ video {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
+.bg-neutral-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1391,6 +1413,11 @@ video {
   color: rgb(69 32 234 / var(--tw-text-opacity));
 }
 
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
 .line-through {
   text-decoration-line: line-through;
 }
@@ -1407,9 +1434,20 @@ video {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+.ring-2 {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 .ring-\[\#4520ea\] {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(69 32 234 / var(--tw-ring-opacity));
+}
+
+.ring-mainred {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(230 0 18 / var(--tw-ring-opacity));
 }
 
 .blur-md {
@@ -1420,6 +1458,14 @@ video {
 .drop-shadow-md {
   --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.duration-150 {
+  transition-duration: 150ms;
+}
+
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .hover\:text-white:hover {
