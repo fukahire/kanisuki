@@ -445,51 +445,88 @@
                     工作人員
                 </span>
             </div>
-            <div class="flex flex-wrap gap-6 px-8">
-                <a class="lg:w-[48%] flex flex-row w-full gap-8 group">
-                    <div class="flex flex-col justify-center items-center relative">
-                        <div class="ytr-icon">
-                            <img src="./asset/cast.jpg" class="rounded-full" alt="">
-                        </div>
-                        <p
-                            class="bg-mainred px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-4 ring-mainred text-white">
-                            欸嚕</p>
-                    </div>
-                </a>
-                <a v-for="item in staff" class=" flex flex-row gap-4 group">
-                    <div class="flex flex-col justify-center items-center relative">
-                        <div class="rounded-full overflow-hidden w-28 p-2 ease-in duration-150">
-                            <img :src="item.image" class="rounded-full" alt="">
-                        </div>
-                        <p
-                            class="bg-mainred px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-2 ring-mainred text-white">
-                            {{item.name}}</p>
-                    </div>
-                </a>
-                <div class="flex">
-                    <a class="flex flex-row gap-8 group" target="_blank" href="https://sites.google.com/view/crayfish0718/" target="_blank">
-                        <div class="flex flex-col justify-center items-center relative">
-                            <div class="ytr-icon">
-                                <img src="./asset/contest_crayfish.jpg" class="rounded-full" alt="">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-8">
+                <div class="flex flex-wrap gap-6 px-8 grid grid-cols-1">
+                    <div class="flex items-center gap-4">
+                        <p class="font-bold text-2xl text-[#ffd04d]">主辦</p>
+                        <a class="flex flex-row gap-8 group">
+                            <div class="flex flex-col justify-center items-center relative">
+                                <div class="rounded-full overflow-hidden w-28 p-2 ease-in duration-150">
+                                    <img src="./asset/staff_eru.jpg" class="rounded-full" alt="">
+                                </div>
+                                <p
+                                    class="bg-mainred px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-4 ring-mainred text-white">
+                                    欸嚕</p>
                             </div>
-                            <p
-                                class=" px-2 py-0.5 rounded-lg font-bold text-white">
-                                小龍蝦盃</p>
-                        </div>
-                    </a>
-                    <a class="flex flex-row gap-8 group" target="_blank" href="https://sites.google.com/view/draftyababi/" translate="">
-                        <div class="flex flex-col justify-center items-center relative">
-                            <div class="ytr-icon">
-                                <img src="./asset/contest_yababi.jpg" class="rounded-full" alt="">
+                        </a>
+                        <a class="flex items-center justify-center gap-4 relative drop-shadow-md group cursor-pointer"
+                            href="https://twitter.com/ooluannoo" target="_blank">
+                            <div
+                                class="w-3 overflow-hidden inline-block absolute left-0 -translate-x-3 top-1/2 -translate-y-1/2">
+                                <div
+                                    class=" h-4 bg-[#fff] rotate-45 transform origin-bottom-right md:group-hover:bg-mainred">
+                                </div>
                             </div>
-                            <p
-                                class="whitespace-nowrap px-2 py-0.5 rounded-lg font-bold text-white">Draft YaBaBi</p>
-                        </div>
-                    </a>
-                    
+                            <div class="md:group-hover:bg-mainred bg-[#fff] p-4 w-full rounded-xl">
+                                <p class="md:group-hover:text-white">推特</p>
+                            </div>
+                        </a>
+                        <a class="flex items-center justify-center gap-4 relative drop-shadow-md group cursor-pointer"
+                            href="https://discord.com/invite/2PkmJfuD" target="_blank">
+                            <div
+                                class="w-3 overflow-hidden inline-block absolute left-0 -translate-x-3 top-1/2 -translate-y-1/2">
+                                <div
+                                    class=" h-4 bg-[#fff] rotate-45 transform origin-bottom-right md:group-hover:bg-mainred">
+                                </div>
+                            </div>
+                            <div class="md:group-hover:bg-mainred bg-[#fff] p-4 w-full rounded-xl">
+                                <p class="md:group-hover:text-white">Discord (エル#6666)</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <p class="font-bold text-2xl text-[#ffd04d]">協辦</p>
+                        <a v-for="item in staff" class=" flex flex-row gap-4 group">
+                            <div class="flex flex-col justify-center items-center relative">
+                                <div class="rounded-full overflow-hidden w-28 p-2 ease-in duration-150">
+                                    <img :src="item.image" class="rounded-full" alt="">
+                                </div>
+                                <p
+                                    class="bg-mainred px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-2 ring-mainred text-white">
+                                    {{item.name}}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flex gap-4">
+                        <p class="font-bold text-2xl text-[#ffd04d] flex items-center">過去賽事參考</p>
+                        <a class="flex flex-row gap-8 group" target="_blank"
+                            href="https://sites.google.com/view/crayfish0718/">
+                            <div class="flex flex-col justify-center items-center relative">
+                                <div class="ytr-icon">
+                                    <img src="./asset/contest_crayfish.jpg" class="rounded-full" alt="">
+                                </div>
+                                <p class=" px-2 py-0.5 rounded-lg font-bold text-white">
+                                    小龍蝦盃</p>
+                            </div>
+                        </a>
+                        <a class="flex flex-row gap-8 group" target="_blank"
+                            href="https://sites.google.com/view/draftyababi/" translate="">
+                            <div class="flex flex-col justify-center items-center relative">
+                                <div class="ytr-icon">
+                                    <img src="./asset/contest_yababi.jpg" class="rounded-full" alt="">
+                                </div>
+                                <p class="whitespace-nowrap px-2 py-0.5 rounded-lg font-bold text-white">Draft YaBaBi
+                                </p>
+                            </div>
+                        </a>
+
+                    </div>
                 </div>
+                <div class="bg-[#ffd04d] p-5 mx-auto text-center w-4/5 lg:w-auto"><p class="text-lg pb-2 mb-4 border-gray-700 border-b-2">蟹音爛梗　特別致蟹</p>
+                    等號卡比「馬上蟳動」<br>
+                    巴風特「銘蟹惠顧」</div>
             </div>
-            <br><br><br><br><br><br><br><br><br><br>
+            <br><br><br>
             <!-- <div class="border-t-2 border-white text-center p-4 text-white my-8">
                 <br><br><br><br><br>
             </div> -->
@@ -515,7 +552,7 @@
                     <!-- <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
                             target="_blank" class="nav-btn_spec">我想贊助</a></li> -->
                     <li><a href="https://www.google.com/url?q=https%3A%2F%2Fdiscord.gg%2F2PkmJfuD&sa=D&sntz=1&usg=AOvVaw3RHi0Shc2RgjljD7cRC6kC"
-                            target="_blank" class="nav-btn_spec">聯絡我們</a></li>
+                            target="_blank" class="nav-btn_spec">聯絡主辦</a></li>
                 </ul>
             </li>
         </ul>
