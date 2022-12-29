@@ -438,12 +438,12 @@
                     bg-cover px-2
                     ">
                         <div class="flex flex-row h-full items-center gap-3">
-                            <div class="w-[4.5rem] h-[70%] rounded-full py-4 px-8 ml-2
+                            <div class="w-[4.5rem] h-[70%] rounded-full p-4 ml-2
                                 bg-neutral-800 text-white
                                 text-center flex justify-center items-center">{{item.unit}}</div>
                             <div class="flex flex-col">
                                 <div class="text-sm">{{item.luckysquid}}</div>
-                                <div class="text-md font-bold text-white">「{{item.title}}」</div>
+                                <div class="text-md font-bold text-white"><span v-html="item.title"></span></div>
                             </div>
                         </div>
                         <!-- <div class="px-6 bg-black h-full flex justify-center items-center">
@@ -651,7 +651,7 @@
                 list: [
                     {
                         unit: '1隊',
-                        title: '冠軍賞 (松葉蟹腳肉*4盒+四人隊圖)',
+                        title: '<span>冠軍賞 <br>(松葉蟹腳肉*4盒+四人隊圖)</span>',
                         image: './asset/prize_kani.jpeg',
                         sponsor: '無蟹可擊',
                         rule: '趕蟹季冠軍隊伍',
@@ -659,7 +659,7 @@
                     },
                     {
                         unit: '1隊',
-                        title: '亞軍賞 (四人隊圖)',
+                        title: '<span>亞軍賞 (四人隊圖)</span>',
                         image: './asset/prize_default.jpg',
                         sponsor: '名列鉗茅',
                         rule: '趕蟹季亞軍隊伍',
@@ -667,7 +667,7 @@
                     },
                     {
                         unit: '1隊',
-                        title: '蟹蟹賞 (四人隊圖)',
+                        title: '<span>蟹蟹賞 (四人隊圖)</span>',
                         image: './asset/prize_default.jpg',
                         sponsor: '螯螯待補',
                         rule: '蟹蟹賞得獎隊伍',
