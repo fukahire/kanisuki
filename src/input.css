@@ -4,7 +4,7 @@
 
 @layer components {
     .rule-title {
-        @apply font-medium text-xl py-2 px-8 mt-12 mb-4 text-white bg-gray-600 mx-auto inline-block rounded-sm self-center;
+        @apply w-80 text-center font-medium text-xl py-2 mt-12 mb-4 text-white bg-gray-600 mx-auto inline-block rounded-sm self-center;
     }
     .rule-mark {
         @apply font-medium text-[#f8b1ff];
