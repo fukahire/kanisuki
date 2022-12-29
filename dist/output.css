@@ -1464,6 +1464,10 @@ video {
     position: absolute;
   }
 
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1522,6 +1526,11 @@ video {
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:bg-zinc-800 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(39 39 42 / var(--tw-bg-opacity));
   }
 
   .md\:p-8 {
