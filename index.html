@@ -427,7 +427,6 @@
                     獎項內容
                 </span>
             </div>
-            <p class="flex justify-center mb-12 text-white">*得獎者以直播抽獎結果為主</p>
             <div
                 class="w-full grid grid-cols-1 lg:grid-cols-2 grid-flow-row gap-4 md:flex-row flex-wrap items-stretch gap-4 px-8 md:px-0">
                 <div v-for="item in list" class=" flex flex-col w-full">
@@ -483,7 +482,10 @@
                         <li>圖片可公開並僅限於獲獎者本人於網路使用，張貼請註明作者。</li>
                         <li>請勿進行任何修改／重製／印刷，並禁止使用於營利活動。</li>
                         <li>得獎者請於1/17(二)12:00前提供四位隊員之設定圖給主辦。</li>
-                        <p>※ 設定圖請完整提供膚色、觸手顏色(髮色)、眼睛顏色、服裝、武器之清晰示意圖。</p>
+                        <li>設定圖請完整提供膚色、觸手顏色(髮色)、眼睛顏色、服裝、武器之清晰示意圖。</li>
+                        <li>得獎者以直播抽獎結果為主。</li>
+                        <li>蟹蟹賞排除已獲冠亞軍賞之得獎者，漁翁得利賞排除已獲冠亞軍賞、蟹蟹賞之得獎者。</li>
+                        <li>單人賞不排除冠亞軍賞、蟹蟹賞之得獎者。</li>
                     </ul>
                 </div>
             </div>
@@ -654,25 +656,65 @@
                     {
                         unit: '1隊',
                         title: '<span>冠軍賞 <br>(松葉蟹腳肉*4盒+四人隊圖)</span>',
-                        image: './asset/prize_kani.jpeg',
-                        sponsor: '無蟹可擊',
+                        image: './asset/prize_oji.jpg',
+                        sponsor: '無蟹可擊 (繪師：歐吉)',
                         rule: '趕蟹季冠軍隊伍',
                         luckysquid: '',
                     },
                     {
                         unit: '1隊',
                         title: '<span>亞軍賞 (四人隊圖)</span>',
-                        image: './asset/prize_default.jpg',
-                        sponsor: '名列鉗茅',
+                        image: './asset/prize_mizugarasu.jpg',
+                        sponsor: '名列鉗茅 (繪師：ミズガラス)',
                         rule: '趕蟹季亞軍隊伍',
                         luckysquid: '',
                     },
                     {
                         unit: '1隊',
                         title: '<span>蟹蟹賞 (四人隊圖)</span>',
-                        image: './asset/prize_default.jpg',
-                        sponsor: '螯螯待補',
+                        image: './asset/prize_chicken.jpg',
+                        sponsor: '螯螯待補 (繪師：雞腿)',
                         rule: '蟹蟹賞得獎隊伍',
+                        luckysquid: '',
+                    },
+                    {
+                        unit: '1隊',
+                        title: '<span>漁ＯＯＯ賞(四人隊圖)</span>',
+                        image: './asset/prize_lala.jpg',
+                        sponsor: '漁我同行 (繪師：辣啦)',
+                        rule: '抽四隻ＯＯＯＯ的參賽者',
+                        luckysquid: '',
+                    },
+                    {
+                        unit: '1人',
+                        title: '<span>趕蟹ＯＯ賞(單人圖)</span>',
+                        image: './asset/prize_mizuo.jpg',
+                        sponsor: '蟳規蹈矩 (繪師：mizuo)',
+                        rule: '穿著ＯＯＯＯ的參賽者',
+                        luckysquid: '',
+                    },
+                    {
+                        unit: '1人',
+                        title: '<span>ＯＯＯ蟹賞(單人圖)</span>',
+                        image: './asset/prize_fan.jpg',
+                        sponsor: '片甲不留 (繪師：梵多)',
+                        rule: '穿著最ＯＯＯ的參賽者',
+                        luckysquid: '',
+                    },
+                    {
+                        unit: '1人',
+                        title: '<span>蟹ＯＯＯ賞(單人圖)</span>',
+                        image: './asset/prize_lami.jpg',
+                        sponsor: '十二萬分蟹意 (繪師：最喜歡螃蟹的樂米得)',
+                        rule: '最ＯＯＯＯ的參賽者',
+                        luckysquid: '',
+                    },
+                    {
+                        unit: '1人',
+                        title: '<span>螃蟹能ＯＯＯＯＯ嗎？(單人圖)</span>',
+                        image: './asset/prize_nana_1.jpg',
+                        sponsor: '勇網直鉗 (繪師：奈奈)',
+                        rule: '以ＯＯＯＯＯ者',
                         luckysquid: '',
                     },
                 ],
