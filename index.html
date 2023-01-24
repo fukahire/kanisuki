@@ -61,12 +61,15 @@
                     <div class="" v-for="empl in employee" :key="empl.kani">
                         <div class="flex gap-2 flex-col md:flex-row">
                             <img :src='empl.img' class="md:w-[66.66667%] rounded-lg max-h-[50vh]" alt="">
-                            <div class="bg-white md:w-[33.33333%] rounded-lg p-4">
+                            <div class="bg-white md:w-[33.33333%] rounded-lg p-4 relative">
                                 <p class="bg-gray-200 p-2 mb-2 rounded-lg">{{ empl.team }}</p>
                                 <p
                                     class="text-mainred font-bold text-xl px-1 border-solid border-b-2 border-mainred py-2">
                                     {{ empl.title }}</p>
                                 <p class="px-1 pt-2" v-html="empl.subtitle"></p>
+                                <img src="./asset/kanikani_medal.png" alt=""
+                                class="w-28 absolute bottom-4 right-4 -rotate-[25deg]"
+                                v-if="empl.medal == true">
                             </div>
                         </div>
                         <div class="flex flex-col-reverse md:flex-row gap-4 md:gap-12 mt-8 md:mt-4">
@@ -266,7 +269,6 @@
             </div>
         </div>
         <div class="max-w-[1200px] w-full md:px-4 mx-auto" v-if="mainpage == true">
-            <div><a href="#" @click=" mainpage = false ">蟹蟹賞</a></div>
             <!-- content -->
             <div class="w-full bg-dark md:p-8">
                 <div>
@@ -738,7 +740,7 @@
                                 bg-neutral-800 text-white
                                 text-center flex justify-center items-center">{{item.unit}}</div>
                             <div class="flex flex-col">
-                                <div class="text-sm">{{item.luckysquid}}</div>
+                                <div class="text-sm text-[#ffd04d] font-medium">恭喜{{item.luckysquid}}</div>
                                 <div class="text-md font-bold text-white"><span v-html="item.title"></span></div>
                             </div>
                         </div>
@@ -983,6 +985,7 @@
                                 leo: '聲納增加了動態感 連背景都有鉗 可惜看不懂標題的關聯性',
                                 yohan: '雖然畫面有螃蟹，但感覺不到主角感，明明是蟹蟹賞卻螃後有人的開5.1雷射喇叭；撇開貼合主題的部分畫面呈現很漂亮，後面的招牌倒是嘲諷得很響應主題。蛤？所以雜魚說的是拿著冰淇淋的我嗎？',
                                 img: './asset/kanikani_01-A1.jpg',
+                                medal: false,
                             },],
                         },
                         {
@@ -1001,6 +1004,7 @@
                                 leo: '紅紅的象徵熟了很不錯  不過都變球狀少了點螃蟹度',
                                 yohan: '我看倒像地瓜球呢。畫面偏單調，也感受不到熱呼呼的感覺，看起來是螃蟹但或許裡面不是螃蟹。如果說是地瓜球我就幫你加三分。',
                                 img: './asset/kanikani_02-A2.JPG',
+                                medal: false,
                             },],
                         },
                         {
@@ -1019,6 +1023,7 @@
                                 leo: '<span class="text-red-600 font-medium">拼命逃跑到好像快熟了</span> 有好笑www',
                                 yohan: '畫面太過擁擠，看得螃蟹密集症候群發作；手拿聲納的樣子看起來蠻開心的沒有在生氣，或許可以改成拍攝丟下來的畫面。所以那個黃灰澤蟹好吃嗎？',
                                 img: './asset/kanikani_03-A3.jpg',
+                                medal: false,
                             },],
                         },
                         {
@@ -1037,6 +1042,7 @@
                                 leo: '覺得把遊樂園中間當餐盤很有創意',
                                 yohan: '主題簡潔明瞭，但畫面呈現感覺有點單調，或許可以在餐桌上放點其他的餐點襯托出主角的彭湃。不是吧，米糕上面真的會放個冰淇淋嗎？不能另外上嗎？',
                                 img: './asset/kanikani_04-A4.jpeg',
+                                medal: false,
                             },],
                         },
                         {
@@ -1271,6 +1277,7 @@
                                 leo: '煮螃蟹很有想法 右邊是在撒鹽嗎www',
                                 yohan: '主題明確，畫面直接，用聲納當作海鹽罐創意十足，巧妙利用空白處進行餐點說明，但是字擋到海蜇皮有點可惜；四人套餐只有三隻螃蟹還要8282新台幣好像有點貴。海老不是炸蝦嗎？我海鮮吃得少你不要騙我。',
                                 img: './asset/kanikani_17-C6.jpg',
+                                medal: true,
                             },],
                         },
                     ]
@@ -1283,11 +1290,11 @@
                     list: [
                         {
                             unit: '1隊',
-                            title: '<span>冠軍賞 <br>(松葉蟹腳肉*4盒+四人隊圖)</span>',
+                            title: '<span>冠軍賞(松葉蟹腳肉*4盒+四人隊圖)</span>',
                             image: './asset/prize_oji.jpg',
                             sponsor: '無蟹可擊 (繪師：歐吉)',
                             rule: '趕蟹季冠軍隊伍',
-                            luckysquid: '',
+                            luckysquid: '有蟹就有肉',
                             url: 'https://twitter.com/Oji_Noki_game',
                         },
                         {
@@ -1296,7 +1303,7 @@
                             image: './asset/prize_mizugarasu.jpg',
                             sponsor: '名列鉗茅 (繪師：ミズガラス)',
                             rule: '趕蟹季亞軍隊伍',
-                            luckysquid: '',
+                            luckysquid: '蟹蟹再連絡',
                             url: 'https://twitter.com/0121relladesuwa',
                         },
                         {
@@ -1305,7 +1312,7 @@
                             image: './asset/prize_chicken.jpg',
                             sponsor: '螯螯待補 (繪師：雞腿)',
                             rule: '蟹蟹賞得獎隊伍',
-                            luckysquid: '',
+                            luckysquid: '如果比賽吃火鍋姥姥就能贏了吧',
                             url: 'https://twitter.com/SnakeWolf',
                         },
                         {
@@ -1314,7 +1321,7 @@
                             image: './asset/prize_lala.jpg',
                             sponsor: '漁我同行 (繪師：辣啦)',
                             rule: '抽四隻於本次比賽中負責使用彈跳聲納的玩家（如各隊負責玩家有更換、則於比賽中曾持有的參賽者皆可參加抽獎）',
-                            luckysquid: '',
+                            luckysquid: '≧( ° H° )≦toP、ミ∞ミAnna、3DChris、LI77xian',
                             url: 'https://twitter.com/yunxd',
                         },
                         {
@@ -1323,7 +1330,7 @@
                             image: './asset/prize_mizuo.jpg',
                             sponsor: '蟳規蹈矩 (繪師：mizuo)',
                             rule: '穿著熊老闆商會裝備進行任何一場比賽者皆可參加抽獎',
-                            luckysquid: '',
+                            luckysquid: 'IDFC™️Mark',
                             url: 'https://twitter.com/mizuo823',
                         },
                         {
@@ -1332,7 +1339,7 @@
                             image: './asset/prize_fan.jpg',
                             sponsor: '片甲不留 (繪師：梵多)',
                             rule: '穿著最清涼的螃蟹使用者',
-                            luckysquid: '',
+                            luckysquid: 'IDFC™️zilla',
                             url: 'https://twitter.com/Vanto0320',
                         },
                         {
@@ -1341,7 +1348,7 @@
                             image: './asset/prize_lami.jpg',
                             sponsor: '十二萬分蟹意 (繪師：最喜歡螃蟹的樂米得)',
                             rule: '開啟最多次螃蟹坦克的參賽者獲獎，如有同數則取該場次己方SP總和（含彈跳聲納）較大者獲獎',
-                            luckysquid: '',
+                            luckysquid: '≧( ° H° )≦da',
                             url: 'https://twitter.com/jupen5004',
                         },
                         {
@@ -1350,7 +1357,7 @@
                             image: './asset/prize_nana_1.jpg',
                             sponsor: '勇網直鉗 (繪師：奈奈)',
                             rule: '以4k主武打敗正在開啓的螃蟹者',
-                            luckysquid: '',
+                            luckysquid: 'Yカニ<マンジュウ；主辦加碼：vBYCvヤツ',
                             url: 'https://twitter.com/LWY69805700',
                         },
                     ],
