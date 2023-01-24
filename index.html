@@ -15,6 +15,7 @@
     <meta property="twitter:description" content="因為很想送螃蟹而生出來的比賽，而且螃蟹很壞" />
     <meta property="twitter:title:image" content="https://fukahire.github.io/kanisuki/asset/visual_ogimg.jpg" />
     <link rel="icon" href="./asset/kani_favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,10 +48,225 @@
                 <p class="text-white font-bold text-xl">非官方遊戲同好比賽</p>
             </div> -->
             <img class="hidden md:block" src="./asset/visual_mobile.jpg" alt="">
-        <img class="block md:hidden" src="./asset/visual_desktop.jpg" alt="">
+            <img class="block md:hidden" src="./asset/visual_desktop.jpg" alt="">
         </div>
         <!-- container -->
-        <div class="max-w-[1200px] w-full md:px-4 mx-auto">
+        <div class="max-w-[1200px] w-full px-4 mx-auto" v-if="mainpage == false"
+            v-for="(employee, i) in employeesFilter(week.id)" :key="i">
+
+            <!-- content蟹蟹賞 -->
+            <div class="w-full bg-dark md:p-8">
+                <div class="bg-mainred text-white font-medium text-center p-2 text-lg rounded-lg mb-4">蟹蟹賞</div>
+                <div v-if="employee.length">
+                    <div class="" v-for="empl in employee" :key="empl.kani">
+                        <div class="flex gap-2 flex-col md:flex-row">
+                            <img :src='empl.img' class="md:w-[66.66667%] rounded-lg max-h-[50vh]" alt="">
+                            <div class="bg-white md:w-[33.33333%] rounded-lg p-4">
+                                <p class="bg-gray-200 p-2 mb-2 rounded-lg">{{ empl.team }}</p>
+                                <p
+                                    class="text-mainred font-bold text-xl px-1 border-solid border-b-2 border-mainred py-2">
+                                    {{ empl.title }}</p>
+                                <p class="px-1 pt-2" v-html="empl.subtitle"></p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col-reverse md:flex-row gap-4 md:gap-12 mt-8 md:mt-4">
+                            <!-- 評審 -->
+                            <div class="md:w-[80%]">
+                                <div>
+                                    <div class="flex gap-4">
+                                        <a class="flex flex-row gap-8 group">
+                                            <div class="flex flex-col justify-center items-center relative">
+                                                <div class="rounded-full overflow-hidden w-24 p-2 ease-in duration-150">
+                                                    <img src="./asset/kani_taylor.png" class="rounded-full" alt="">
+                                                </div>
+                                                <p
+                                                    class="bg-red-500 px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-2 ring-red-500 text-white">
+                                                    泰勒</p>
+                                            </div>
+                                        </a>
+                                        <a class="flex items-center justify-center gap-4 relative drop-shadow-md group">
+                                            <div
+                                                class="w-3 overflow-hidden inline-block absolute left-0 -translate-x-2 top-1/2 -translate-y-1/2">
+                                                <div
+                                                    class=" h-4 bg-[#fff] rotate-45 transform origin-bottom-right md:group-hover:bg-gray-200">
+                                                </div>
+                                            </div>
+                                            <div class="md:group-hover:bg-gray-200 bg-[#fff] p-4 w-full rounded-xl">
+                                                <p class="">
+                                                    <span v-html="empl.taylor"></span>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex gap-4">
+                                        <a class="flex flex-row gap-8 group">
+                                            <div class="flex flex-col justify-center items-center relative">
+                                                <div class="rounded-full overflow-hidden w-24 p-2 ease-in duration-150">
+                                                    <img src="./asset/kani_chicken.png" class="rounded-full" alt="">
+                                                </div>
+                                                <p
+                                                    class="bg-red-500 px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-2 ring-red-500 text-white">
+                                                    雞腿</p>
+                                            </div>
+                                        </a>
+                                        <a class="flex items-center justify-center gap-4 relative drop-shadow-md group">
+                                            <div
+                                                class="w-3 overflow-hidden inline-block absolute left-0 -translate-x-2 top-1/2 -translate-y-1/2">
+                                                <div
+                                                    class=" h-4 bg-[#fff] rotate-45 transform origin-bottom-right md:group-hover:bg-gray-200">
+                                                </div>
+                                            </div>
+                                            <div class="md:group-hover:bg-gray-200 bg-[#fff] p-4 w-full rounded-xl">
+                                                <p class="">
+                                                    <span v-html="empl.chicken"></span>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex gap-4">
+                                        <a class="flex flex-row gap-8 group">
+                                            <div class="flex flex-col justify-center items-center relative">
+                                                <div class="rounded-full overflow-hidden w-24 p-2 ease-in duration-150">
+                                                    <img src="./asset/kani_otonashi.png" class="rounded-full" alt="">
+                                                </div>
+                                                <p
+                                                    class="bg-red-500 px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-2 ring-red-500 text-white">
+                                                    音無</p>
+                                            </div>
+                                        </a>
+                                        <a class="flex items-center justify-center gap-4 relative drop-shadow-md group">
+                                            <div
+                                                class="w-3 overflow-hidden inline-block absolute left-0 -translate-x-2 top-1/2 -translate-y-1/2">
+                                                <div
+                                                    class=" h-4 bg-[#fff] rotate-45 transform origin-bottom-right md:group-hover:bg-gray-200">
+                                                </div>
+                                            </div>
+                                            <div class="md:group-hover:bg-gray-200 bg-[#fff] p-4 w-full rounded-xl">
+                                                <p class="">
+                                                    <span v-html="empl.otonashi"></span>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex gap-4">
+                                        <a class="flex flex-row gap-8 group">
+                                            <div class="flex flex-col justify-center items-center relative">
+                                                <div class="rounded-full overflow-hidden w-24 p-2 ease-in duration-150">
+                                                    <img src="./asset/kani_leo.png" class="rounded-full" alt="">
+                                                </div>
+                                                <p
+                                                    class="bg-red-500 px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-2 ring-red-500 text-white">
+                                                    雷歐</p>
+                                            </div>
+                                        </a>
+                                        <a class="flex items-center justify-center gap-4 relative drop-shadow-md group">
+                                            <div
+                                                class="w-3 overflow-hidden inline-block absolute left-0 -translate-x-2 top-1/2 -translate-y-1/2">
+                                                <div
+                                                    class=" h-4 bg-[#fff] rotate-45 transform origin-bottom-right md:group-hover:bg-gray-200">
+                                                </div>
+                                            </div>
+                                            <div class="md:group-hover:bg-gray-200 bg-[#fff] p-4 w-full rounded-xl">
+                                                <p class="">
+                                                    <span v-html="empl.leo"></span>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex gap-4">
+                                        <a class="flex flex-row gap-8 group">
+                                            <div class="flex flex-col justify-center items-center relative">
+                                                <div class="rounded-full overflow-hidden w-24 p-2 ease-in duration-150">
+                                                    <img src="./asset/kani_yohan.png" class="rounded-full" alt="">
+                                                </div>
+                                                <p
+                                                    class="bg-red-500 px-2 py-0.5 rounded-lg font-bold absolute bottom-0 right-0 rotate-6 ring-2 ring-red-500 text-white">
+                                                    有酣</p>
+                                            </div>
+                                        </a>
+                                        <a class="flex items-center justify-center gap-4 relative drop-shadow-md group">
+                                            <div
+                                                class="w-3 overflow-hidden inline-block absolute left-0 -translate-x-2 top-1/2 -translate-y-1/2">
+                                                <div
+                                                    class=" h-4 bg-[#fff] rotate-45 transform origin-bottom-right md:group-hover:bg-gray-200">
+                                                </div>
+                                            </div>
+                                            <div class="md:group-hover:bg-gray-200 bg-[#fff] p-4 w-full rounded-xl">
+                                                <p class="">
+                                                    <span v-html="empl.yohan"></span>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-row md:flex-col gap-8 justify-center">
+                                <div class="">
+                                    <div class="flex flex-col items-center gap-4">
+                                        <div
+                                            class="rounded-full ring-8 ring-yellow-500 w-24 h-24 text-center flex items-center justify-center">
+                                            <p class="text-3xl text-yellow-500">{{ empl.average }}</p>
+                                        </div>
+                                        <p class="text-xl text-yellow-500">評分</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="grid grid-rows-1 md:grid-rows-2 grid-flow-col justify-center gap-4 items-center">
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="rounded-full ring-4 ring-white w-16 h-16 text-center flex items-center justify-center">
+                                            <p class="text-xl text-white">{{ empl.kani }}</p>
+                                        </div>
+                                        <p class="text-sm text-white">螃蟹度</p>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="rounded-full ring-4 ring-white w-16 h-16 text-center flex items-center justify-center">
+                                            <p class="text-xl text-white">{{ empl.story }}</p>
+                                        </div>
+                                        <p class="text-sm text-white">故事性</p>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="rounded-full ring-4 ring-white w-16 h-16 text-center flex items-center justify-center">
+                                            <p class="text-xl text-white">{{ empl.view }}</p>
+                                        </div>
+                                        <p class="text-sm text-white">畫面呈現</p>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="rounded-full ring-4 ring-white w-16 h-16 text-center flex items-center justify-center">
+                                            <p class="text-xl text-white">{{ empl.art }}</p>
+                                        </div>
+                                        <p class="text-sm text-white">拍攝美感</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 上下頁 -->
+                            <div class="flex justify-center gap-4 fixed bottom-2 right-2">
+                                <button type="button" v-show="week.id > 0" @click="selectemployee(-1)"
+                                    class="bg-white py-[4px] px-[8px] rounded-lg font-bold">上一組</button>
+                                <button type="button" v-show="week.id < 16" @click="selectemployee(1)"
+                                    class="bg-white py-[4px] px-[8px] rounded-lg font-bold">下一組</button>
+                                <a href="#" @click=" mainpage = true "
+                                    class="bg-white py-[4px] px-[8px] rounded-lg font-bold">回首頁</a>
+                            </div>
+                        </div>
+                        <div class="h-16"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1200px] w-full md:px-4 mx-auto" v-if="mainpage == true">
+            <div><a href="#" @click=" mainpage = false ">蟹蟹賞</a></div>
             <!-- content -->
             <div class="w-full bg-dark md:p-8">
                 <div>
@@ -172,8 +388,10 @@
                                                 <div class="flex py-2 justify-center gap-2"><a
                                                         href="https://twitter.com/OtoNashiKyou" target="_blank"
                                                         class="flex flex-col items-cneter group rounded-xl  md:p-4">
-                                                        <div class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
-                                                            <img class="rounded-full" src="./asset/kani_otonashi.png" alt="">
+                                                        <div
+                                                            class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
+                                                            <img class="rounded-full" src="./asset/kani_otonashi.png"
+                                                                alt="">
                                                         </div>
                                                         <span class="ytr-name"><span class="text-xl">音無</span></span>
                                                     </a>
@@ -183,7 +401,8 @@
                                                 <div class="flex py-2 justify-center gap-2"><a
                                                         href="https://twitter.com/leom1024" target="_blank"
                                                         class="flex flex-col items-cneter group rounded-xl md:p-4">
-                                                        <div class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
+                                                        <div
+                                                            class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
                                                             <img class="rounded-full" src="./asset/kani_leo.png" alt="">
                                                         </div>
                                                         <span class="ytr-name"><span class="text-xl">雷歐</span></span>
@@ -194,8 +413,10 @@
                                                 <div class="flex py-2 justify-center gap-2"><a
                                                         href="https://twitter.com/SnakeWolf" target="_blank"
                                                         class="flex flex-col items-cneter group rounded-xl md:p-4">
-                                                        <div class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
-                                                            <img class="rounded-full" src="./asset/kani_chicken.png" alt="">
+                                                        <div
+                                                            class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
+                                                            <img class="rounded-full" src="./asset/kani_chicken.png"
+                                                                alt="">
                                                         </div>
                                                         <span class="ytr-name"><span class="text-xl">雞腿</span></span>
                                                     </a>
@@ -205,8 +426,10 @@
                                                 <div class="flex py-2 justify-center gap-2"><a
                                                         href="https://twitter.com/jbdxblgutaguta" target="_blank"
                                                         class="flex flex-col items-cneter group rounded-xl md:p-4">
-                                                        <div class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
-                                                            <img class="rounded-full" src="./asset/kani_taylor.png" alt="">
+                                                        <div
+                                                            class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
+                                                            <img class="rounded-full" src="./asset/kani_taylor.png"
+                                                                alt="">
                                                         </div>
                                                         <span class="ytr-name"><span class="text-xl">泰勒</span></span>
                                                     </a>
@@ -216,8 +439,10 @@
                                                 <div class="flex py-2 justify-center gap-2"><a
                                                         href="https://twitter.com/yohanzhou_hello" target="_blank"
                                                         class="flex flex-col items-cneter group rounded-xl md:p-4">
-                                                        <div class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
-                                                            <img class="rounded-full" src="./asset/kani_yohan.png" alt="">
+                                                        <div
+                                                            class="rounded-full overflow-hidden w-20 md:w-28 p-2 md:group-hover:rotate-45 ease-in duration-150">
+                                                            <img class="rounded-full" src="./asset/kani_yohan.png"
+                                                                alt="">
                                                         </div>
                                                         <span class="ytr-name"><span class="text-xl">有酣</span></span>
                                                     </a>
@@ -448,7 +673,8 @@
                         </div>
                         <div>
                             <p class="text-lg pb-2 border-b-2 mb-4 border-black">規則／成員／武器選擇錯誤對應</p>
-                            <div class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense mb-4">
+                            <div
+                                class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense mb-4">
                                 <ol class="list-disc ml-8 mb-4 col-span-2 ">
                                     <li>若有選擇錯誤情形，請重開房，雙方以同樣地圖規則、同樣武器組成及裝備進行對戰。</li>
                                     <li>若房主方連續兩次選擇錯誤，則該場對戰結果判定為對方勝利。</li>
@@ -463,7 +689,8 @@
                                 </div>
                             </div>
                             <p class="text-lg pb-2 border-b-2 mb-4 border-black">lag處理方案</p>
-                            <div class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense mb-4">
+                            <div
+                                class="flex flex-col md:grid-cols-3 md:grid md:gap-4 items-center grid-flow-row-dense mb-4">
                                 <ol class="list-disc ml-8 mb-4 col-span-2">
                                     <p>對戰中如有對於lag產生影響對戰結果的疑問，請繼續對戰至該場對戰結束，結束後請依照以下內容於Discord內之「網路問題回報」頻道提出：</p>
                                     <li>隊伍名稱／對方隊伍名稱+lag選手名稱。</li>
@@ -515,6 +742,7 @@
                                 <div class="text-md font-bold text-white"><span v-html="item.title"></span></div>
                             </div>
                         </div>
+
                         <!-- <div class="px-6 bg-black h-full flex justify-center items-center">
                             <div class="w-8 h-8">
                                 這裡放icon
@@ -543,7 +771,8 @@
                                     <img class="" src="./asset/dntno_syuto.png" alt="">
                                 </div> -->
                             </div>
-                            <div class="absolute bottom-0 right-0 p-4 opacity-0 group-hover:opacity-100 "><img class="w-8 -rotate-45" src="./asset/kani_visual_red.png" alt=""></div>
+                            <div class="absolute bottom-0 right-0 p-4 opacity-0 group-hover:opacity-100 "><img
+                                    class="w-8 -rotate-45" src="./asset/kani_visual_red.png" alt=""></div>
                         </div>
                     </div>
                 </a>
@@ -675,45 +904,42 @@
                 <br><br><br><br><br>
             </div> -->
         </div>
-    </div>
-    </div>
 
-    <!-- nav -->
-    <!-- <div class="fixed blur-md h-14 w-full bottom-0
+        <!-- nav -->
+        <!-- <div class="fixed blur-md h-14 w-full bottom-0
      bg-gradient-to-r from-violet-500 to-fuchsia-500"></div> -->
-    <div class="hidden md:flex fixed justify-center items-center bg-[#ffd04d] 
-    top-0 right-0">
-        <ul class="flex items-center gap-6 mx-8 my-4 w-[40rem]">
-            <li class="flex justify-between items-center w-[100%]">
-                <ul class="flex flex-center items-center justify-between w-full">
-                    <li class="nav-btn"><a href="#theme">活動資訊</a></li>
-                    <li class="nav-btn"><a href="#contest">賽事章程</a></li>
-                    <li class="nav-btn"><a href="#question">問題回報</a></li>
-                    <li class="nav-btn"><a href="#award">獎項內容</a></li>
-                    <li class="nav-btn"><a href="#staff">工作人員</a></li>
-                    <!-- <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform"
+        <div class="hidden md:flex fixed justify-center items-center bg-[#ffd04d] 
+    top-0 right-0" v-if="mainpage == true">
+            <ul class="flex items-center gap-6 mx-8 my-4 w-[40rem]">
+                <li class="flex justify-between items-center w-[100%]">
+                    <ul class="flex flex-center items-center justify-between w-full">
+                        <li class="nav-btn"><a href="#theme">活動資訊</a></li>
+                        <li class="nav-btn"><a href="#contest">賽事章程</a></li>
+                        <li class="nav-btn"><a href="#question">問題回報</a></li>
+                        <li class="nav-btn"><a href="#award">獎項內容</a></li>
+                        <li class="nav-btn"><a href="#staff">工作人員</a></li>
+                        <li class="nav-btn"><a href="#" @click=" mainpage = false ">蟹蟹賞</a></li>
+                        <!-- <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform"
                             target="_blank" class="nav-btn_spec">我要報名</a></li> -->
-                    <!-- <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
+                        <!-- <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform"
                             target="_blank" class="nav-btn_spec">我想贊助</a></li> -->
-                    <li><a href="https://discord.gg/uzxmxVF3Ew"
-                            target="_blank" class="nav-btn_spec">聯絡主辦</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+                        <li><a href="https://discord.gg/uzxmxVF3Ew" target="_blank" class="nav-btn_spec">聯絡主辦</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-    <div id="test">
-        <!-- 打開鍵 -->
-        <!-- <button  class="fixed bottom-5 right-5 hover:text-white z-10" @click=" mobile = 'no' ">打開</button> -->
-        <!-- <div class="flex flex-col gap-2 fixed bottom-2 right-2 md:hidden">
+            <div id="test">
+                <!-- 打開鍵 -->
+                <!-- <button  class="fixed bottom-5 right-5 hover:text-white z-10" @click=" mobile = 'no' ">打開</button> -->
+                <!-- <div class="flex flex-col gap-2 fixed bottom-2 right-2 md:hidden">
             <a class="navmobile-btn flex"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdFic0O-UQXr4s65eOH3V2PxeD-wkdjUmFEikM36Z52VXOfRQ/viewform">我要<br>報名</a>
             <a class="navmobile-btn flex"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSc5NC380QmP0g-_qu2rVm_4C3GCtfKtdSxr58T0t4c97ValYg/viewform">我想<br>贊助</a>
         </div> -->
 
-        <!-- nav mobile -->
-        <!-- <div class="fixed flex h-screen overflow-hidden items-center justify-center bg-black" :class="{active:navmobile}">
+                <!-- nav mobile -->
+                <!-- <div class="fixed flex h-screen overflow-hidden items-center justify-center bg-black" :class="{active:navmobile}">
         <ul class="flex flex-col gap-4 text-center text-white">
           <li><a href="#theme">比賽章程</a></li>
           <li><a href="#contest">賽制</a></li>
@@ -724,7 +950,12 @@
         </ul>
         <div class="absolute bottom-5 right-5" @click="navmobile = !navmobile">叉叉</div>
     </div> -->
+            </div>
+        </div>
     </div>
+    </div>
+
+
 
 
 
@@ -732,104 +963,431 @@
     <script type="text/javascript">
         var app = new Vue({
             el: '#app',
-            data: {
-                list: [
-                    {
-                        unit: '1隊',
-                        title: '<span>冠軍賞 <br>(松葉蟹腳肉*4盒+四人隊圖)</span>',
-                        image: './asset/prize_oji.jpg',
-                        sponsor: '無蟹可擊 (繪師：歐吉)',
-                        rule: '趕蟹季冠軍隊伍',
-                        luckysquid: '',
-                        url: 'https://twitter.com/Oji_Noki_game',
-                    },
-                    {
-                        unit: '1隊',
-                        title: '<span>亞軍賞 (四人隊圖)</span>',
-                        image: './asset/prize_mizugarasu.jpg',
-                        sponsor: '名列鉗茅 (繪師：ミズガラス)',
-                        rule: '趕蟹季亞軍隊伍',
-                        luckysquid: '',
-                        url: 'https://twitter.com/0121relladesuwa',
-                    },
-                    {
-                        unit: '1隊',
-                        title: '<span>蟹蟹賞 (四人隊圖)</span>',
-                        image: './asset/prize_chicken.jpg',
-                        sponsor: '螯螯待補 (繪師：雞腿)',
-                        rule: '蟹蟹賞得獎隊伍',
-                        luckysquid: '',
-                        url: 'https://twitter.com/SnakeWolf',
-                    },
-                    {
-                        unit: '1隊',
-                        title: '<span>漁翁得利賞(四人圖)</span>',
-                        image: './asset/prize_lala.jpg',
-                        sponsor: '漁我同行 (繪師：辣啦)',
-                        rule: '抽四隻於本次比賽中負責使用彈跳聲納的玩家（如各隊負責玩家有更換、則於比賽中曾持有的參賽者皆可參加抽獎）',
-                        luckysquid: '',
-                        url: 'https://twitter.com/yunxd',
-                    },
-                    {
-                        unit: '1人',
-                        title: '<span>趕蟹打工賞(單人圖)</span>',
-                        image: './asset/prize_mizuo.jpg',
-                        sponsor: '蟳規蹈矩 (繪師：mizuo)',
-                        rule: '穿著熊老闆商會裝備進行任何一場比賽者皆可參加抽獎',
-                        luckysquid: '',
-                        url: 'https://twitter.com/mizuo823',
-                    },
-                    {
-                        unit: '1人',
-                        title: '<span>春光外蟹賞(單人圖)</span>',
-                        image: './asset/prize_fan.jpg',
-                        sponsor: '片甲不留 (繪師：梵多)',
-                        rule: '穿著最清涼的螃蟹使用者',
-                        luckysquid: '',
-                        url: 'https://twitter.com/Vanto0320',
-                    },
-                    {
-                        unit: '1人',
-                        title: '<span>蟹蟹大家賞(單人圖)</span>',
-                        image: './asset/prize_lami.jpg',
-                        sponsor: '十二萬分蟹意 (繪師：最喜歡螃蟹的樂米得)',
-                        rule: '開啟最多次螃蟹坦克的參賽者獲獎，如有同數則取該場次己方SP總和（含彈跳聲納）較大者獲獎',
-                        luckysquid: '',
-                        url: 'https://twitter.com/jupen5004',
-                    },
-                    {
-                        unit: '1人',
-                        title: '<span>螃蟹能像4k那樣一確嗎？(單人圖)</span>',
-                        image: './asset/prize_nana_1.jpg',
-                        sponsor: '勇網直鉗 (繪師：奈奈)',
-                        rule: '以4k主武打敗正在開啓的螃蟹者',
-                        luckysquid: '',
-                        url: 'https://twitter.com/LWY69805700',
-                    },
-                ],
-                staff: [
-                    {
-                        url: '#',
-                        image: './asset/staff_syuto.jpg',
-                        name: '秀托',
-                    },
-                    {
-                        url: '#',
-                        image: './asset/staff_nana.jpg',
-                        name: '拿拿',
-                    },
-                    {
-                        url: '#',
-                        image: './asset/staff_apa.jpg',
-                        name: 'APA',
-                    },
-                    {
-                        url: '#',
-                        image: './asset/staff_fukahire.jpg',
-                        name: '魚翅',
-                    },
-                ],
-            }
+            props: {
+                employees: {
+                    type: Array,
+                    default: () => [
+                        {
+                            'inputs': [{
+                                title: '蛤有人拿4K耶？哼，雜魚。',
+                                subtitle: '<p><a href="https://www.youtube.com/clip/UgkxF9_AAeKmtAUbt8TsvlhBsaLassY1NYbP" target="_blank">參考影片</a></p>',
+                                team: 'A1-蟹天蟹帝王謝',
+                                kani: '8.2',
+                                story: '6.8',
+                                view: '7.8',
+                                art: '7.8',
+                                average: '7.65',
+                                taylor: '這是霸凌畫面吧？太橫行霸道了&忘記編輯字體好可惜 <span class="text-red-600 font-medium">有人發現藍色螃蟹下多了兩隻腳嗎</span>',
+                                chicken: '猴哩蟹!!有人螃蟹能發射51啊!!檢舉按鈕在哪?任天堂管管啊',
+                                otonashi: '螃蟹配上冰淇淋與捲心餅好像不太搭...感受不到實體畫面',
+                                leo: '聲納增加了動態感 連背景都有鉗 可惜看不懂標題的關聯性',
+                                yohan: '雖然畫面有螃蟹，但感覺不到主角感，明明是蟹蟹賞卻螃後有人的開5.1雷射喇叭；撇開貼合主題的部分畫面呈現很漂亮，後面的招牌倒是嘲諷得很響應主題。蛤？所以雜魚說的是拿著冰淇淋的我嗎？',
+                                img: './asset/kanikani_01-A1.jpg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '螃蟹燒',
+                                subtitle: '<p>熱呼呼的螃蟹燒好吃喔~快來魚市場享受美味的螃蟹吧</p>',
+                                team: 'A2-良介一人扛蟹蟹大家',
+                                kani: '5.8',
+                                story: '7',
+                                view: '6.4',
+                                art: '6.6',
+                                average: '6.45',
+                                taylor: '這是4k串芋泥球吧！！！螃蟹的部分你們是瓜分掉了嗎？有一顆球還彈起來真的沒問題嗎？總之先給我一串吧',
+                                chicken: '紫蟹丸燒硬出新滋味!只碎你牙不溶你口!硬辣!因為評審牙齒斷了所以喔7777',
+                                otonashi: '這構圖馬上想到披頭四的專輯封面，這螃蟹全是殼好難剝，我好想吃螃蟹RRR',
+                                leo: '紅紅的象徵熟了很不錯  不過都變球狀少了點螃蟹度',
+                                yohan: '我看倒像地瓜球呢。畫面偏單調，也感受不到熱呼呼的感覺，看起來是螃蟹但或許裡面不是螃蟹。如果說是地瓜球我就幫你加三分。',
+                                img: './asset/kanikani_02-A2.JPG',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '救命',
+                                subtitle: '<p>雖然隊名是我們不會用針槍 但到頭來只有我(起司)和Agnes不會用成了戰犯....<br>比賽之後宏基表示受夠我們了只好拿出聲納趕蟹甚至恨不得直接擲向我們 QQ<br>（Moby大佬針槍本當上手所以不用被趕... ）<br>然後因為都是螃蟹新手所以選了黃色 當只小小的黃灰澤蟹<br>（雖然準備被趕走所以拼命逃跑到好像快熟了 救命！！！！！）</p>',
+                                team: 'A3-我們不會用針槍',
+                                kani: '8',
+                                story: '7.8',
+                                view: '7.4',
+                                art: '7.2',
+                                average: '7.6',
+                                taylor: '兩位戰犯的綠色睫毛十分可愛，凸顯了後面拿聲納人的霸氣感，請問這是在拍綜藝玩很大嗎？ P.S.後面印堂發黑隊員的螃蟹看著聲納好Q',
+                                chicken: '用符號拼湊出的效果與畫面充份表現出了無辜的黃灰澤蟹即將被趕入水中逼迫游泳，成為一隻偉大的海蟹..!恨陸不成海的教練逼迫可憐的小陸蟹們直接下海辛酸畫面流出',
+                                otonashi: '螃蟹變紅看起來很好吃，只是畫面太擠要素過多，我有點餓',
+                                leo: '<span class="text-red-600 font-medium">拼命逃跑到好像快熟了</span> 有好笑www',
+                                yohan: '畫面太過擁擠，看得螃蟹密集症候群發作；手拿聲納的樣子看起來蠻開心的沒有在生氣，或許可以改成拍攝丟下來的畫面。所以那個黃灰澤蟹好吃嗎？',
+                                img: './asset/kanikani_03-A3.jpg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '紅蟳米糕',
+                                subtitle: '<p>鮮豔的餐盤上擺著一道傳統台灣宴客料理，配上完美的結尾甜點冰淇淋甜筒。</p>',
+                                team: 'A4-不要炒辣',
+                                kani: '8.2',
+                                story: '7.8',
+                                view: '7',
+                                art: '7.4',
+                                average: '7.6',
+                                taylor: '<span class="text-red-600 font-medium">香菜不可原諒...<span>',
+                                chicken: '大哥你的冰淇淋插在米糕裡耶?這樣不行ㄟ',
+                                otonashi: '越看越餓...我好想吃螃蟹',
+                                leo: '覺得把遊樂園中間當餐盤很有創意',
+                                yohan: '主題簡潔明瞭，但畫面呈現感覺有點單調，或許可以在餐桌上放點其他的餐點襯托出主角的彭湃。不是吧，米糕上面真的會放個冰淇淋嗎？不能另外上嗎？',
+                                img: './asset/kanikani_04-A4.jpeg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: 'Vinzzzi：蟹蟹再聯絡',
+                                subtitle: '<p>カニ食べたい</p>',
+                                team: 'A5-蟹蟹再聯絡',
+                                kani: '6.4',
+                                story: '6.4',
+                                view: '6.8',
+                                art: '6',
+                                average: '6.4',
+                                taylor: '情況從糟糕變得難以理解的照片... 下次可以請隊上的鏡4K來掌鏡嗎',
+                                chicken: '左邊鎧之紅蟳，右邊超大型青蟹，好吃!',
+                                otonashi: '這螃蟹新鮮到煮熟會噴水，有點厲害啊',
+                                leo: '有點掌握不太到 <span class="text-red-600 font-medium">食べたい</span> 跟畫面的關聯',
+                                yohan: '蟹蟹再連絡跟想吃螃蟹沒有連結點，畫面呈現雖然有螃蟹但站在旁邊的後面的飛起來的太過雜亂抓不到主題。いや、食べたくないのです。',
+                                img: './asset/kanikani_05-A5.jpg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '漁夫想抓三隻蟹蟹',
+                                subtitle: '<p>隊長奇奇蟹盡全力的帶著另外兩隻蟹蟹逃跑</p>',
+                                team: 'A6-銘蟹惠顧',
+                                kani: '8.2',
+                                story: '7.4',
+                                view: '7.2',
+                                art: '7.2',
+                                average: '7.5',
+                                taylor: '你們螃蟹太飽滿了吧居然擠滿整個畫面！！！所以你們要跑到哪裡！！',
+                                chicken: '如果是迪士尼風格接下來奇奇蟹會開始唱歌接著三隻螃蟹一起大合唱後切到漁夫的鏡頭然後漁夫也開始唱歌，這是一個歌舞劇照',
+                                otonashi: '活跳跳！活跳跳！只看畫面彷彿嘴巴有海水鹹味',
+                                leo: '右邊那隻笑得很開心有點難想像是在逃跑(X',
+                                yohan: '畫面呈現上沒有逃跑的感覺，或許可以抓到球型態切回螃蟹型態的瞬間配合跳躍拍攝比較有動態感，後面臭溫泉魚乾的logo跟燈籠有股親切感。右邊那隻我看你是很開心喔。',
+                                img: './asset/kanikani_06-A6.jpg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '敵視點',
+                                subtitle: '<p>噩夢</p>',
+                                team: 'B1-力二',
+                                kani: '7.6',
+                                story: '7.6',
+                                view: '8.8',
+                                art: '7.2',
+                                average: '7.8',
+                                taylor: '我感到束手無策...',
+                                chicken: '看到背後了嗎?那是我們隊的重生點',
+                                otonashi: '真格噩夢，不要吃我RRR',
+                                leo: '打完趕蟹季看到這個畫面感覺會 PTSD www',
+                                yohan: '我要看到蟹流成河，墨水顏色或許可以選更鉗衛的顏色；如果以敵人視角為出發點感覺看到這麼整齊的機會比較小，站位再安排一下才有四處都是螃蟹逃不掉的噩夢感。老實說我覺得這比較像頒獎典禮，來，看鏡頭。',
+                                img: './asset/kanikani_07-B1.jpeg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: 'DeJa vu',
+                                subtitle: '<p>一個花枝在用肉身抵擋螃蟹坦克的入侵</p>',
+                                team: 'B2-我們需要那個酷鉗鉗',
+                                kani: '7.5',
+                                story: '7',
+                                view: '8.5',
+                                art: '7.75',
+                                average: '7.6875',
+                                taylor: '發想很有趣不過為什麼是在這邊拍wwww傑瑞跟Viko都被擋到了啦www',
+                                chicken: '花枝漿',
+                                otonashi: '很有故事性但是不好吃，小心飛來的河蟹',
+                                leo: '如果可以去除畫面上的一些遮擋物會更好',
+                                yohan: '如果是用肉身擋住應該可以讓花枝跟螃蟹不同顏色，點綴一點蟹鬥的痕跡，劃上一點敵方墨水更有情境，螃蟹的部分則是可以有攻擊的畫面來說明為什麼地板是粉紅色；畫面拍攝上有一根路燈擋住破壞畫面很可惜。為什麼你們的螃蟹都是走直的？',
+                                img: './asset/kanikani_08-B2.jpg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '老師後面有人在蟹鬥',
+                                subtitle: '<p>副標題：理想很美好，現實腳到爆 腳(形容詞）<br>注音：ㄐㄧㄠˇ 漢語拼音：jiǎo<br>相似詞：很腳、腳爆了、超腳<br>釋義：形容斯普拉遁打得很爛<br>典故：不知道是誰說了一句：這些魚*打得超爛欸！他們是用腳在打電動嗎？<br>例句：天啊！剛剛打工遇到的魚超腳的，害我掉回達人+3了⋯⋯<br> *註：魚：玩家，泛指章魚或魷魚(花枝)</p>',
+                                team: 'B3-ゴミあし',
+                                kani: '7.4',
+                                story: '6.8',
+                                view: '8',
+                                art: '7.4',
+                                average: '7.4',
+                                taylor: '你們這火拼的威力也太強了吧！！而且最近發現蟹腳有八支就算腳爆應該也不會輸吧！！！',
+                                chicken: '<a class="text-blue-500 cursor-pointer" href="https://www.toy-people.com/?p=74463" target="_blank">等等國文老師用腳教訓你們</a>',
+                                otonashi: '完全是演唱會現場吧，中間立著巨型麥克風',
+                                leo: '畫面很有動態感 不過標題的連結性有點不足',
+                                yohan: '主題是蟹鬥的話感覺螃蟹坦克可以使用不同顏色，最好還能捕捉到螃蟹坦克壞掉零件掉出的畫面，聲納的動畫效果以及稍微傾斜的畫面我很喜歡。而且你發言有舉手，超棒der。',
+                                img: './asset/kanikani_09-B3.jpeg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '酒精燈烤蟹',
+                                subtitle: '<p>終於把火點起來，螃蟹也烤熟了:)</p>',
+                                team: 'B5-吉品真澄牌白乾蟹餃',
+                                kani: '8.6',
+                                story: '7.8',
+                                view: '7.6',
+                                art: '6.8',
+                                average: '7.7',
+                                taylor: '你們螃蟹看起來有抱蛋感覺很好吃...',
+                                chicken: '用酒精燈就能烤熟的螃蟹會不會吃不飽????',
+                                otonashi: '我 現 在 就 要 吃 螃 蟹 ！',
+                                leo: '中間的螃蟹最紅是故意的嗎？很講究唉www',
+                                yohan: '以鐵網當烤盤的想法很好，但酒精燈應該不是這個顏色，SP集滿的特效勉強有像燃燒的感覺不過整體來說太薄弱。這裡是工廠嗎？確定在這裡烤螃蟹不會整棟燒起來嗎？',
+                                img: './asset/kanikani_10-B5.jpeg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '記憶中的紅蟳米糕 註：香菜多',
+                                subtitle: '<p>用大峽谷中場地形當作紅蟳米糕的容器裝著兩隻紅蟳，下雨SP化作香菜，但手滑灑太多惹</p>',
+                                team: 'B6-菇神樣マジすごううううう',
+                                kani: '8.6',
+                                story: '8.2',
+                                view: '8.6',
+                                art: '7.6',
+                                average: '8.25',
+                                taylor: '很想說構圖很用心但香菜太多了我很不舒服',
+                                chicken: '這碗給泰勒吧',
+                                otonashi: '感覺比較像螃蟹相撲，輸的會被油炸..',
+                                leo: '加了濾鏡配圖片上的註解很有心 香菜加太多有好笑給推',
+                                yohan: '選擇大峽谷高台大小適中，兩隻螃蟹烹調恰當顏色剛好，復古風濾鏡貼合主題，人物向上看著鏡頭的感覺彷彿在訴說著某段故事。不過真的灑太多了。',
+                                img: './asset/kanikani_11-B6.jpg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '螃蟹快快來',
+                                subtitle: '<p>看到美味的螃蟹在眼前用力呼喚這2隻螃蟹來他面前，卻呼略還有1隻美味魷魚</p>',
+                                team: 'C2-感蟹魷你真好',
+                                kani: '6.4',
+                                story: '7.4',
+                                view: '6.2',
+                                art: '6',
+                                average: '6.5',
+                                taylor: '你們知道這代有相機功能嗎！！！',
+                                chicken: '美味的我看不只有一隻魷魚喔',
+                                otonashi: '呼朋引蟹，過魷不及',
+                                leo: '感覺魷魚搶鏡+螃蟹是背面降低了一些螃蟹度',
+                                yohan: '對喊來這裡的玩家來說魷魚應該在後面還被掩體擋住，畫面上有點多餘，距離太遠看不到吶喊者的表情有點可惜。但是直接叫煮熟的螃蟹真的會來嗎？',
+                                img: './asset/kanikani_12-C2.jpeg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '造船關：隘口難攻速速繳蟹',
+                                subtitle: '<p>靈感來自肉肉直播我們的那場。<br>造船廠的這個高台很像古時候的人所說的隘口，<br>在此連開了3隻螃蟹，磅礴的氣勢速速壓制，並逼人繳械。</p>',
+                                team: 'C5-花樣定食-出走的蟹料理',
+                                kani: '8.2',
+                                story: '7.6',
+                                view: '7',
+                                art: '6.6',
+                                average: '7.35',
+                                taylor: '右邊拍照的人手跑出來了！！照片太真實我看了都想起被占領高台的回憶，橘色的蟹膏噴射看起來很好吃',
+                                chicken: '超級在意右邊的人欸!',
+                                otonashi: '所以三隻螃蟹可以守住街亭嗎？',
+                                leo: '右邊有人入鏡小扣分 所有螃蟹都開火的話感覺更好',
+                                yohan: '如果主題是在隘口強逼的話，比起三隻螃蟹的特寫，畫面上或許可以拉開距離，呈現對手被螃蟹坦克壓制的無力感，如果說要連開也可以抓一隻快結束+一隻正在開+一隻準備開的畫面也不錯。所以上面拿聲納的不丟一下嗎？',
+                                img: './asset/kanikani_13-C5.jpeg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '蟹蟹團',
+                                subtitle: '<p>比賽之前在大廳等待時候的小插曲，自己隊伍和別的隊伍都團在一下開螃蟹，標題就是感謝有團隊一齊打</p>',
+                                team: 'D1-チームの名前はまだ知らない',
+                                kani: '6',
+                                story: '6.6',
+                                view: '5.6',
+                                art: '4.8',
+                                average: '5.75',
+                                taylor: '地瓜球比例太高了吧，螃蟹在哪裡！！！！',
+                                chicken: '螃蟹開場一齊走，對手日子不再有，一點射，一發炮，一人倒，全滅啦~',
+                                otonashi: '四球檸檬冰淇淋感..',
+                                leo: '有點不太懂 不過也蟹蟹大家踴躍參加比賽',
+                                yohan: '欸你不能隨便給一張截圖耶？而且這明明就是巨大地瓜球好嗎？',
+                                img: './asset/kanikani_14-D1.jpeg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '來溫泉螃蟹鍋吧',
+                                subtitle: '<p>充滿誠意的溫泉紅蟹，現撈現煮，即刻送達，實在新鮮</p>',
+                                team: 'D4-霞谷溫泉螃蟹鍋',
+                                kani: '8.8',
+                                story: '7.4',
+                                view: '7',
+                                art: '7.4',
+                                average: '7.65',
+                                taylor: '本火鍋用料實在還免費附贈海蜇皮，價格實惠，會再去回購',
+                                chicken: '水煮就是美味，現在買水煮蟹即送水母泡澡清涼照',
+                                otonashi: '你們兩組是不是說好要虐待評審的，超想吃螃蟹鍋..',
+                                leo: '寫點評寫到很餓是正常的嗎...',
+                                yohan: '畫面相對單調，就算只是螃蟹也要要求擺盤，而且感覺螃蟹已經煮到不成蟹樣了。你倒是趕快撈起來啊！！！',
+                                img: './asset/kanikani_15-D4.jpg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: 'The ЭĐoses',
+                                subtitle: '<p>照片靈感來自披頭四(The Beatles)經典過馬路照片，再添加上蟹元素～</p>',
+                                team: 'D6-3針疫苗團',
+                                kani: '7.4',
+                                story: '7.8',
+                                view: '9.2',
+                                art: '8.8',
+                                average: '8.3',
+                                taylor: '我們這組本來也有在鰻鯰區拍披頭四的照片雖然不是同個位置XDD用墨自己畫斑馬線這發想太有趣了',
+                                chicken: '有很用心地用皇上將地板塗滿加上分明的三代代表色藍黃相間，實屬藝術，可惜因為我想畫的構圖先被你們拍了所以我要扣分(咬手帕',
+                                otonashi: '經典構圖全新滋味，好吃螃蟹過馬路',
+                                leo: '斑馬線塗的很有誠意',
+                                yohan: '致敬經典，地板也用心畫成斑馬線的樣子，不過畫面呈現及拍攝手法被固定無法發揮更多創意，畫面不是非螃蟹不可這兩點比較可惜。Old is Good。',
+                                img: './asset/kanikani_16-D6.jpeg',
+                            },],
+                        },
+                        {
+                            'inputs': [{
+                                title: '鹽味海姥鍋',
+                                subtitle: '<p>4人套餐含臭魚乾鍋底</p>',
+                                team: 'C6-如果比賽吃火鍋姥姥就能贏了吧',
+                                kani: '8.68',
+                                story: '8.4',
+                                view: '8.6',
+                                art: '7.8',
+                                average: '8.37',
+                                taylor: '姥姥團最終敵不過火鍋慘遭反嗜變成火鍋的一部分，大家團練還是要小心啦！誰可以告訴我8282是什麼',
+                                chicken: '用聲納造型當天然海鹽罐是個有創意的想法，其中一隻螃蟹看起來像是被鹽醃了?!還有你們的海蜇皮有夠生，生到在湯頭裡聊天!',
+                                otonashi: '請問團練報名在哪裡，看起來就很好吃',
+                                leo: '煮螃蟹很有想法 右邊是在撒鹽嗎www',
+                                yohan: '主題明確，畫面直接，用聲納當作海鹽罐創意十足，巧妙利用空白處進行餐點說明，但是字擋到海蜇皮有點可惜；四人套餐只有三隻螃蟹還要8282新台幣好像有點貴。海老不是炸蝦嗎？我海鮮吃得少你不要騙我。',
+                                img: './asset/kanikani_17-C6.jpg',
+                            },],
+                        },
+                    ]
+                },
+            },
+            data() {
+                return {
+                    week: { id: 0, title: "current week" },
+                    mainpage: false,
+                    list: [
+                        {
+                            unit: '1隊',
+                            title: '<span>冠軍賞 <br>(松葉蟹腳肉*4盒+四人隊圖)</span>',
+                            image: './asset/prize_oji.jpg',
+                            sponsor: '無蟹可擊 (繪師：歐吉)',
+                            rule: '趕蟹季冠軍隊伍',
+                            luckysquid: '',
+                            url: 'https://twitter.com/Oji_Noki_game',
+                        },
+                        {
+                            unit: '1隊',
+                            title: '<span>亞軍賞 (四人隊圖)</span>',
+                            image: './asset/prize_mizugarasu.jpg',
+                            sponsor: '名列鉗茅 (繪師：ミズガラス)',
+                            rule: '趕蟹季亞軍隊伍',
+                            luckysquid: '',
+                            url: 'https://twitter.com/0121relladesuwa',
+                        },
+                        {
+                            unit: '1隊',
+                            title: '<span>蟹蟹賞 (四人隊圖)</span>',
+                            image: './asset/prize_chicken.jpg',
+                            sponsor: '螯螯待補 (繪師：雞腿)',
+                            rule: '蟹蟹賞得獎隊伍',
+                            luckysquid: '',
+                            url: 'https://twitter.com/SnakeWolf',
+                        },
+                        {
+                            unit: '1隊',
+                            title: '<span>漁翁得利賞(四人圖)</span>',
+                            image: './asset/prize_lala.jpg',
+                            sponsor: '漁我同行 (繪師：辣啦)',
+                            rule: '抽四隻於本次比賽中負責使用彈跳聲納的玩家（如各隊負責玩家有更換、則於比賽中曾持有的參賽者皆可參加抽獎）',
+                            luckysquid: '',
+                            url: 'https://twitter.com/yunxd',
+                        },
+                        {
+                            unit: '1人',
+                            title: '<span>趕蟹打工賞(單人圖)</span>',
+                            image: './asset/prize_mizuo.jpg',
+                            sponsor: '蟳規蹈矩 (繪師：mizuo)',
+                            rule: '穿著熊老闆商會裝備進行任何一場比賽者皆可參加抽獎',
+                            luckysquid: '',
+                            url: 'https://twitter.com/mizuo823',
+                        },
+                        {
+                            unit: '1人',
+                            title: '<span>春光外蟹賞(單人圖)</span>',
+                            image: './asset/prize_fan.jpg',
+                            sponsor: '片甲不留 (繪師：梵多)',
+                            rule: '穿著最清涼的螃蟹使用者',
+                            luckysquid: '',
+                            url: 'https://twitter.com/Vanto0320',
+                        },
+                        {
+                            unit: '1人',
+                            title: '<span>蟹蟹大家賞(單人圖)</span>',
+                            image: './asset/prize_lami.jpg',
+                            sponsor: '十二萬分蟹意 (繪師：最喜歡螃蟹的樂米得)',
+                            rule: '開啟最多次螃蟹坦克的參賽者獲獎，如有同數則取該場次己方SP總和（含彈跳聲納）較大者獲獎',
+                            luckysquid: '',
+                            url: 'https://twitter.com/jupen5004',
+                        },
+                        {
+                            unit: '1人',
+                            title: '<span>螃蟹能像4k那樣一確嗎？(單人圖)</span>',
+                            image: './asset/prize_nana_1.jpg',
+                            sponsor: '勇網直鉗 (繪師：奈奈)',
+                            rule: '以4k主武打敗正在開啓的螃蟹者',
+                            luckysquid: '',
+                            url: 'https://twitter.com/LWY69805700',
+                        },
+                    ],
+                    staff: [
+                        {
+                            url: '#',
+                            image: './asset/staff_syuto.jpg',
+                            name: '秀托',
+                        },
+                        {
+                            url: '#',
+                            image: './asset/staff_nana.jpg',
+                            name: '拿拿',
+                        },
+                        {
+                            url: '#',
+                            image: './asset/staff_apa.jpg',
+                            name: 'APA',
+                        },
+                        {
+                            url: '#',
+                            image: './asset/staff_fukahire.jpg',
+                            name: '魚翅',
+                        },
+                    ],
+                }
+            },
+            methods: {
+                employeesFilter(w) {
+                    return this.employees[w]
+                },
+                selectemployee(w) {
+                    this.week.id += w
+                    this.week.id === 0 ? this.week.title = "current week" : this.week.id === 1 ? this.week.title = "next week" : this.week.title = "week after"
+                }
+            },
+
         })
         var test = new Vue({
             el: '#test',
