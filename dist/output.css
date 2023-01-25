@@ -881,8 +881,8 @@ video {
   height: 3.5rem;
 }
 
-.max-h-\[50vh\] {
-  max-height: 50vh;
+.h-\[80px\] {
+  height: 80px;
 }
 
 .w-full {
